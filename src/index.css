@@ -38,6 +38,21 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+      /* Coffee Theme Colors */
+      --coffee-dark: 26 23% 16%; /* #8B4513 converted to HSL */
+      --coffee-primary: 26 47% 31%; /* #8B4513 */
+      --coffee-secondary: 36 78% 66%; /* #D2691E */
+      --coffee-cream: 39 69% 92%; /* #F5E6D3 */
+      --coffee-caramel: 26 67% 44%; /* #D2691E */
+      
+      /* Design System Extensions */
+      --gradient-coffee: linear-gradient(135deg, hsl(var(--coffee-dark)), hsl(var(--coffee-primary)));
+      --gradient-caramel: linear-gradient(135deg, hsl(var(--coffee-secondary)), hsl(var(--coffee-caramel)));
+      --shadow-coffee-glow: 0 10px 30px -10px hsl(var(--coffee-primary) / 0.3);
+      --shadow-coffee-strong: 0 20px 40px -10px hsl(var(--coffee-primary) / 0.5);
+      --shadow-caramel-glow: 0 10px 30px -10px hsl(var(--coffee-secondary) / 0.4);
+      --radius-coffee: 12px;
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
