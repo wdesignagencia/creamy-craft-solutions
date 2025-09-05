@@ -31,7 +31,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <div className="text-xl sm:text-2xl font-bold bg-gradient-coffee bg-clip-text text-transparent">
-              CoffeeEquip Pro
+              NitroJet
             </div>
           </div>
 
