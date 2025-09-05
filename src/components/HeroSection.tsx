@@ -7,12 +7,12 @@ const HeroSection = () => {
       {/* Liquid Background */}
       <div className="absolute inset-0 z-0">
         <LiquidEther
-          colors={['#3C1810', '#8B4513', '#D2691E', '#F5E6D3', '#CD853F']}
-          mouseForce={30}
-          cursorSize={150}
+          colors={['#8B4513', '#D2691E', '#F5E6D3', '#CD853F']}
+          mouseForce={25}
+          cursorSize={120}
           autoDemo={true}
-          autoSpeed={0.4}
-          autoIntensity={2.0}
+          autoSpeed={0.3}
+          autoIntensity={1.8}
         />
       </div>
 
@@ -21,30 +21,30 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 text-coffee-cream animate-fade-in">
-            Saboreie o{" "}
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-coffee-cream animate-fade-in">
+            Transforme sua{" "}
             <span className="bg-gradient-caramel bg-clip-text text-transparent">
-              Equipamento
+              Cafeteria
             </span>{" "}
-            Perfeito!
+            em um Sucesso
           </h1>
           
-          <p className="text-xl md:text-2xl text-coffee-cream/90 mb-12 leading-relaxed animate-fade-in max-w-3xl mx-auto">
-            Equipamentos premium que transformam sua cafeteria em um sucesso. 
-            Tecnologia inovadora para cada xícara perfeita.
+          <p className="text-xl md:text-2xl text-coffee-cream/90 mb-8 leading-relaxed animate-fade-in">
+            Equipamentos premium que encantam seus clientes a cada xícara e cada colherada.
+            Eleve o padrão do seu estabelecimento com tecnologia inovadora.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in">
-            <Button size="lg" className="bg-gradient-caramel hover:shadow-caramel-glow px-10 py-6 text-lg font-semibold rounded-coffee">
-              Descubra Agora
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
+            <Button size="lg" className="bg-gradient-caramel hover:shadow-caramel-glow px-8 py-6 text-lg">
+              Descubra Nossas Soluções
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-coffee-cream text-coffee-cream hover:bg-coffee-cream hover:text-coffee-dark px-10 py-6 text-lg font-semibold rounded-coffee"
+              className="border-coffee-cream text-coffee-cream hover:bg-coffee-cream hover:text-coffee-dark px-8 py-6 text-lg"
             >
-              Agendar Demo
+              Agendar Demonstração
             </Button>
           </div>
         </div>
