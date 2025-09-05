@@ -22,7 +22,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-coffee-cream animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-coffee-cream animate-fade-in">
             Transforme sua{" "}
             <span className="bg-gradient-caramel bg-clip-text text-transparent">
               Cafeteria
@@ -30,21 +30,24 @@ const HeroSection = () => {
             em um Sucesso
           </h1>
           
-          <p className="text-xl md:text-2xl text-coffee-cream/90 mb-8 leading-relaxed animate-fade-in">
+          <p className="text-lg sm:text-xl md:text-2xl text-coffee-cream/90 mb-6 sm:mb-8 leading-relaxed animate-fade-in px-4">
             Equipamentos premium que encantam seus clientes a cada xícara e cada colherada.
             Eleve o padrão do seu estabelecimento com tecnologia inovadora.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
-            <Button size="lg" className="bg-gradient-caramel hover:shadow-caramel-glow px-8 py-6 text-lg">
-              Descubra Nossas Soluções
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in">
+            <Button 
+              size="lg" 
+              className="bg-gradient-caramel hover:shadow-caramel-glow px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
+            >
+              <span className="hidden sm:inline">Descubra Nossas </span>Soluções
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-coffee-cream text-coffee-cream hover:bg-coffee-cream hover:text-coffee-dark px-8 py-6 text-lg"
+              className="border-coffee-cream text-coffee-cream hover:bg-coffee-cream hover:text-coffee-dark px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
             >
-              Agendar Demonstração
+              <span className="hidden sm:inline">Agendar </span>Demonstração
             </Button>
           </div>
         </div>

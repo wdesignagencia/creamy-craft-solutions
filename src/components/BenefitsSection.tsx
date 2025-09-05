@@ -26,33 +26,33 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-coffee-cream/5">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-coffee-cream/5">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-coffee bg-clip-text text-transparent">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-coffee bg-clip-text text-transparent">
             Por que Escolher Nossos Equipamentos?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Descubra como nossos equipamentos premium podem revolucionar seu negócio e criar experiências únicas para seus clientes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {benefits.map((benefit, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-coffee-glow transition-all duration-300 hover:-translate-y-2 border-coffee-cream/20 bg-card/50 backdrop-blur"
+              className="group hover:shadow-coffee-glow transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 border-coffee-cream/20 bg-card/50 backdrop-blur"
             >
-              <CardContent className="p-8 text-center">
-                <div className="mb-6 flex justify-center">
-                  <div className="p-4 bg-gradient-coffee rounded-full group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon className="h-8 w-8 text-coffee-cream" />
+              <CardContent className="p-6 sm:p-8 text-center">
+                <div className="mb-4 sm:mb-6 flex justify-center">
+                  <div className="p-3 sm:p-4 bg-gradient-coffee rounded-full group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="h-6 w-6 sm:h-8 sm:w-8 text-coffee-cream" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-coffee-dark">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-coffee-dark">
                   {benefit.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {benefit.description}
                 </p>
               </CardContent>

@@ -43,18 +43,18 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="produtos" className="py-20 bg-gradient-to-b from-coffee-cream/5 to-background">
+    <section id="produtos" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-coffee-cream/5 to-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-coffee bg-clip-text text-transparent">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-coffee bg-clip-text text-transparent">
             Produtos em Destaque
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Conheça nossa linha premium de equipamentos que estão revolucionando cafeterias e sorveterias em todo o país.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
           {products.map((product) => (
             <Card 
               key={product.id}
@@ -90,25 +90,25 @@ const ProductsSection = () => {
                   }
                 />
               </CardHeader>
-              <CardContent className="p-6">
-                <CardTitle className="text-xl mb-2 text-coffee-dark">
+              <CardContent className="p-4 sm:p-6">
+                <CardTitle className="text-lg sm:text-xl mb-2 text-coffee-dark">
                   {product.title}
                 </CardTitle>
-                <CardDescription className="mb-4 text-base">
+                <CardDescription className="mb-4 text-sm sm:text-base">
                   {product.description}
                 </CardDescription>
                 
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-4 sm:mb-6">
                   {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-2 h-2 bg-gradient-caramel rounded-full mr-3"></div>
+                    <li key={index} className="flex items-center text-xs sm:text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-gradient-caramel rounded-full mr-2 sm:mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
                 <Button 
-                  className="w-full bg-gradient-coffee hover:bg-gradient-caramel hover:shadow-coffee-glow transition-all duration-300"
+                  className="w-full bg-gradient-coffee hover:bg-gradient-caramel hover:shadow-coffee-glow transition-all duration-300 text-sm sm:text-base"
                 >
                   Ver Detalhes
                 </Button>
@@ -117,11 +117,11 @@ const ProductsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-12">
           <Button 
             size="lg"
             variant="outline"
-            className="border-coffee-primary text-coffee-primary hover:bg-coffee-primary hover:text-coffee-cream px-8"
+            className="border-coffee-primary text-coffee-primary hover:bg-coffee-primary hover:text-coffee-cream px-6 sm:px-8 w-full sm:w-auto"
           >
             Ver Todos os Produtos
           </Button>
