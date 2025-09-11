@@ -1,17 +1,34 @@
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import BenefitsSection from "@/components/BenefitsSection";
-import ProductsSection from "@/components/ProductsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import HeroSection from '@/components/HeroSection';
+import ProblemSection from '@/components/ProblemSection';
+import MethodologySection from '@/components/MethodologySection';
+import ProcessSection from '@/components/ProcessSection';
+import ScopeSection from '@/components/ScopeSection';
+import InvestmentSection from '@/components/InvestmentSection';
+import AboutSection from '@/components/AboutSection';
+import CTASection from '@/components/CTASection';
+import Navigation from '@/components/Navigation';
 
 const Index = () => {
+  useEffect(() => {
+    // Smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <HeroSection />
-      <BenefitsSection />
-      <ProductsSection />
-      <TestimonialsSection />
+      <Navigation />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <MethodologySection />
+        <ProcessSection />
+        <ScopeSection />
+        <InvestmentSection />
+        <AboutSection />
+        <CTASection />
+      </main>
     </div>
   );
 };

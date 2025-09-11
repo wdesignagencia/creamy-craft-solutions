@@ -17,17 +17,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 213 94% 28%; /* Professional blue #1e3a8a */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 215 28% 57%; /* Modern gray #64748b */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 24 95% 53%; /* Orange accent #f97316 */
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -38,20 +38,20 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-      /* Coffee Theme Colors */
-      --coffee-dark: 26 23% 16%; /* #8B4513 converted to HSL */
-      --coffee-primary: 26 47% 31%; /* #8B4513 */
-      --coffee-secondary: 36 78% 66%; /* #D2691E */
-      --coffee-cream: 39 69% 92%; /* #F5E6D3 */
-      --coffee-caramel: 26 67% 44%; /* #D2691E */
-      
-      /* Design System Extensions */
-      --gradient-coffee: linear-gradient(135deg, hsl(var(--coffee-dark)), hsl(var(--coffee-primary)));
-      --gradient-caramel: linear-gradient(135deg, hsl(var(--coffee-secondary)), hsl(var(--coffee-caramel)));
-      --shadow-coffee-glow: 0 10px 30px -10px hsl(var(--coffee-primary) / 0.3);
-      --shadow-coffee-strong: 0 20px 40px -10px hsl(var(--coffee-primary) / 0.5);
-      --shadow-caramel-glow: 0 10px 30px -10px hsl(var(--coffee-secondary) / 0.4);
-      --radius-coffee: 12px;
+    /* B2B Professional Theme Colors */
+    --blue-professional: 213 94% 28%; /* #1e3a8a */
+    --blue-bright: 213 94% 68%; /* #3b82f6 */
+    --gray-modern: 215 28% 57%; /* #64748b */
+    --orange-cta: 24 95% 53%; /* #f97316 */
+    --white-clean: 0 0% 100%; /* #ffffff */
+    
+    /* Design System Extensions */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--blue-professional)), hsl(var(--blue-bright)));
+    --gradient-cta: linear-gradient(135deg, hsl(var(--orange-cta)), hsl(24 95% 58%));
+    --shadow-professional: 0 10px 30px -10px hsl(var(--blue-professional) / 0.3);
+    --shadow-card: 0 4px 16px hsl(var(--blue-professional) / 0.1);
+    --shadow-cta: 0 8px 25px -8px hsl(var(--orange-cta) / 0.4);
+    --radius-modern: 12px;
 
     --sidebar-background: 0 0% 98%;
 
