@@ -19,10 +19,10 @@ const MethodologySection = () => {
       title: "Tráfego Pago Direcionado",
       subtitle: "Campanhas segmentadas para construtoras",
       points: [
-        "Gestão de tráfego para melhor distribuição dos conteúdos",
-        "Campanhas segmentadas para construtoras",
+        "Google Ads para 'análise acústica', 'ruído construção'",
+        "Campanhas segmentadas para o público alvo",
         "Landing pages de alta conversão",
-        "Remarketing para leads mornos"
+        "Potencialização dos conteúdos que funcionam no orgânico"
       ]
     }
   ];
