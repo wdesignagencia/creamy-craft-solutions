@@ -119,7 +119,7 @@ const ScopeSection = () => {
               <div className="mt-6 p-4 bg-orange-50 rounded-modern">
                 <p className="text-sm text-orange-cta font-semibold">
                   <FileBarChart className="w-4 h-4 inline mr-2" />
-                  Mensalidade de R$ 1.200,00
+                  Mensalidade de R$ 1.750,00
                 </p>
               </div>
             </motion.div>
