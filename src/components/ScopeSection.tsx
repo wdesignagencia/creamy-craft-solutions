@@ -3,9 +3,9 @@ import { Settings, Megaphone, FileBarChart, Zap, CheckCircle2 } from 'lucide-rea
 
 const ScopeSection = () => {
   const setupItems = [
-    "Otimização LinkedIn + Instagram",
+    "Otimização Instagram",
     "Identidade visual digital",
-    "Campanhas Google Ads",
+    "Campanhas Meta (Facebook + Instagram)",
     "Landing pages de conversão",
     "Setup de tracking e analytics"
   ];
