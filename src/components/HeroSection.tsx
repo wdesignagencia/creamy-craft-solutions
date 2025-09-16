@@ -34,9 +34,14 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="font-montserrat font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 tracking-wide">
-              TRANSFORMAMOS ESPAÇOS EM EXPERIÊNCIAS SONORAS PERFEITAS
-            </h1>
+            <AnimatedText 
+              text="TRANSFORMAMOS ESPAÇOS EM EXPERIÊNCIAS SONORAS PERFEITAS"
+              gradientColors="linear-gradient(90deg, #ffffff, #6B90D9, #ffffff)"
+              gradientAnimationDuration={3}
+              hoverEffect={true}
+              className="py-0 mb-4"
+              textClassName="font-montserrat font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-wide"
+            />
           </motion.div>
 
           {/* Subtitle */}
