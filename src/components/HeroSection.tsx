@@ -73,16 +73,16 @@ const HeroSection = () => {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 max-w-3xl mx-auto"
           >
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl sm:text-4xl font-bold text-acoustic-gold mb-2">25+</div>
-              <div className="text-white/80 text-sm sm:text-base">Anos de experiência</div>
+              <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">25+</div>
+              <div className="text-white/90 text-sm sm:text-base">Anos de experiência</div>
             </div>
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl sm:text-4xl font-bold text-acoustic-gold mb-2">1000+</div>
-              <div className="text-white/80 text-sm sm:text-base">Projetos realizados</div>
+              <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">1000+</div>
+              <div className="text-white/90 text-sm sm:text-base">Projetos realizados</div>
             </div>
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl sm:text-4xl font-bold text-acoustic-gold mb-2">100%</div>
-              <div className="text-white/80 text-sm sm:text-base">Satisfação garantida</div>
+              <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">100%</div>
+              <div className="text-white/90 text-sm sm:text-base">Satisfação garantida</div>
             </div>
           </motion.div>
 
@@ -96,7 +96,7 @@ const HeroSection = () => {
             <Button 
               onClick={() => scrollToSection('#products')} 
               size="lg" 
-              className="bg-acoustic-gold hover:bg-acoustic-gold/90 text-acoustic-dark font-bold px-8 py-4 text-lg rounded-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-4 text-lg rounded-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Play className="w-5 h-5 mr-2" />
               Ver Nossos Produtos
@@ -105,7 +105,7 @@ const HeroSection = () => {
               onClick={() => scrollToSection('#contact')} 
               variant="outline" 
               size="lg" 
-              className="border-2 border-white/50 bg-white/10 backdrop-blur-sm hover:bg-white hover:text-acoustic-dark text-white font-semibold px-8 py-4 text-lg rounded-lg w-full sm:w-auto transition-all duration-300"
+              className="border-2 border-white/60 bg-white/5 backdrop-blur-sm hover:bg-white hover:text-secondary text-white font-semibold px-8 py-4 text-lg rounded-lg w-full sm:w-auto transition-all duration-300"
             >
               <Phone className="w-5 h-5 mr-2" />
               Solicitar Orçamento

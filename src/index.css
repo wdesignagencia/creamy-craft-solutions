@@ -18,16 +18,16 @@ All colors MUST be HSL.
     --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 225 73% 57%; /* Acoustic blue matching logo */
-    --primary-foreground: 224 24% 15%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 8% 35%; /* Professional gray */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 14% 28%; /* Professional dark gray */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 20% 96%;
-    --muted-foreground: 220 8% 35%;
+    --muted-foreground: 220 14% 28%;
 
-    --accent: 45 93% 47%; /* Gold accent */
-    --accent-foreground: 210 40% 98%;
+    --accent: 40 95% 50%; /* Warm gold accent */
+    --accent-foreground: 220 14% 28%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -41,9 +41,9 @@ All colors MUST be HSL.
     /* Audio Professional Theme Colors */
     --acoustic-blue: 225 73% 57%; /* #5B80C2 - matches logo */
     --acoustic-dark: 224 24% 15%; /* #242B3D - deep charcoal */
-    --acoustic-gray: 220 8% 35%; /* #555963 - professional gray */
+    --acoustic-gray: 220 14% 28%; /* #44495A - professional gray */
     --acoustic-light: 210 20% 96%; /* #F4F5F7 - light background */
-    --acoustic-accent: 45 93% 47%; /* #E6B800 - gold accent */
+    --acoustic-accent: 40 95% 50%; /* #FF9500 - warm gold accent */
     
     /* Design System Extensions */
     --gradient-hero: linear-gradient(135deg, hsl(224, 24%, 15%) 0%, hsl(225, 73%, 57%) 50%, hsl(220, 8%, 35%) 100%);
@@ -118,6 +118,10 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
   }
 }
