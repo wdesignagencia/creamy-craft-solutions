@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 213 94% 28%; /* Professional blue #1e3a8a */
-    --primary-foreground: 210 40% 98%;
+    --primary: 225 73% 57%; /* Acoustic blue matching logo */
+    --primary-foreground: 224 24% 15%;
 
-    --secondary: 215 28% 57%; /* Modern gray #64748b */
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 8% 35%; /* Professional gray */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 8% 35%;
 
-    --accent: 24 95% 53%; /* Orange accent #f97316 */
+    --accent: 45 93% 47%; /* Gold accent */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,20 +38,23 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* B2B Professional Theme Colors */
-    --blue-professional: 213 94% 28%; /* #1e3a8a */
-    --blue-bright: 213 94% 68%; /* #3b82f6 */
-    --gray-modern: 215 28% 57%; /* #64748b */
-    --orange-cta: 24 95% 53%; /* #f97316 */
-    --white-clean: 0 0% 100%; /* #ffffff */
+    /* Audio Professional Theme Colors */
+    --acoustic-blue: 225 73% 57%; /* #5B80C2 - matches logo */
+    --acoustic-dark: 224 24% 15%; /* #242B3D - deep charcoal */
+    --acoustic-gray: 220 8% 35%; /* #555963 - professional gray */
+    --acoustic-light: 210 20% 96%; /* #F4F5F7 - light background */
+    --acoustic-accent: 45 93% 47%; /* #E6B800 - gold accent */
     
     /* Design System Extensions */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--blue-professional)), hsl(var(--blue-bright)));
-    --gradient-cta: linear-gradient(135deg, hsl(var(--orange-cta)), hsl(24 95% 58%));
-    --shadow-professional: 0 10px 30px -10px hsl(var(--blue-professional) / 0.3);
-    --shadow-card: 0 4px 16px hsl(var(--blue-professional) / 0.1);
-    --shadow-cta: 0 8px 25px -8px hsl(var(--orange-cta) / 0.4);
-    --radius-modern: 12px;
+    --gradient-hero: linear-gradient(135deg, hsl(224, 24%, 15%) 0%, hsl(225, 73%, 57%) 50%, hsl(220, 8%, 35%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 96%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(45, 93%, 47%), hsl(35, 100%, 50%));
+    --shadow-premium: 0 25px 60px rgba(36, 49, 77, 0.15);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --shadow-floating: 0 15px 35px rgba(36, 49, 77, 0.1);
+    --shadow-glow: 0 0 40px rgba(91, 128, 194, 0.2);
+    --radius-modern: 16px;
+    --radius-card: 12px;
 
     --sidebar-background: 0 0% 98%;
 

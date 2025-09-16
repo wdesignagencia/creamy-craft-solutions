@@ -62,27 +62,31 @@ export default {
               border: 'hsl(var(--sidebar-border))',
               ring: 'hsl(var(--sidebar-ring))'
             },
-            /* B2B Professional Theme Colors */
-            'blue-professional': 'hsl(var(--blue-professional))',
-            'blue-bright': 'hsl(var(--blue-bright))',
-            'gray-modern': 'hsl(var(--gray-modern))',
-            'orange-cta': 'hsl(var(--orange-cta))',
-            'white-clean': 'hsl(var(--white-clean))'
+            /* Audio Professional Theme Colors */
+            'acoustic-blue': 'hsl(var(--acoustic-blue))',
+            'acoustic-dark': 'hsl(var(--acoustic-dark))',
+            'acoustic-gray': 'hsl(var(--acoustic-gray))',
+            'acoustic-light': 'hsl(var(--acoustic-light))',
+            'acoustic-accent': 'hsl(var(--acoustic-accent))'
           },
           backgroundImage: {
             'gradient-hero': 'var(--gradient-hero)',
-            'gradient-cta': 'var(--gradient-cta)'
+            'gradient-card': 'var(--gradient-card)',
+            'gradient-cta': 'var(--gradient-cta)',
+            'acoustic-gradient': 'var(--acoustic-gradient)'
           },
           boxShadow: {
-            'professional': 'var(--shadow-professional)',
+            'premium': 'var(--shadow-premium)',
             'card': 'var(--shadow-card)',
-            'cta': 'var(--shadow-cta)'
+            'floating': 'var(--shadow-floating)',
+            'glow': 'var(--shadow-glow)'
           },
           borderRadius: {
             lg: 'var(--radius)',
             md: 'calc(var(--radius) - 2px)',
             sm: 'calc(var(--radius) - 4px)',
-            modern: 'var(--radius-modern)'
+            modern: 'var(--radius-modern)',
+            card: 'var(--radius-card)'
           },
           keyframes: {
             'fade-in': {
