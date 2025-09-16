@@ -26,7 +26,11 @@ const Header = () => {
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 py-3 sm:py-4">
         <div className="flex justify-between items-center">
-          
+          <div className="flex items-center">
+            <div className="text-xl sm:text-2xl font-bold bg-gradient-coffee bg-clip-text text-transparent">
+              NitroJet
+            </div>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
