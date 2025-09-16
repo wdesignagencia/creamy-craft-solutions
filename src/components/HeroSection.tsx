@@ -40,7 +40,7 @@ const HeroSection = () => {
               gradientAnimationDuration={3}
               hoverEffect={true}
               className="py-0 mb-4"
-              textClassName="font-montserrat font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-tight tracking-wide"
+              textClassName="font-montserrat font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed tracking-wide"
             />
           </motion.div>
 
