@@ -39,7 +39,7 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     /* Audio Professional Theme Colors */
-    --acoustic-blue: 225 73% 57%; /* #5B80C2 - matches logo */
+    --acoustic-blue: 225 82% 65%; /* #6B90D9 - lighter blue with better contrast */
     --acoustic-dark: 224 24% 15%; /* #242B3D - deep charcoal */
     --acoustic-gray: 220 8% 35%; /* #555963 - professional gray */
     --acoustic-light: 210 20% 96%; /* #F4F5F7 - light background */

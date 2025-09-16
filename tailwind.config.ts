@@ -69,6 +69,10 @@ export default {
             'acoustic-light': 'hsl(var(--acoustic-light))',
             'acoustic-accent': 'hsl(var(--acoustic-accent))'
           },
+          fontFamily: {
+            'montserrat': ['Montserrat', 'sans-serif'],
+            'inter': ['Inter', 'sans-serif']
+          },
           backgroundImage: {
             'gradient-hero': 'var(--gradient-hero)',
             'gradient-card': 'var(--gradient-card)',

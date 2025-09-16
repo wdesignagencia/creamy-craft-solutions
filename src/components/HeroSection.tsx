@@ -25,18 +25,6 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* Logo */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        className="absolute top-8 left-8 z-20"
-      >
-        <div className="flex items-center space-x-3">
-          <img src={logoAcoustic} alt="Acoustic Audio" className="h-12 w-12" />
-          <span className="text-white text-xl font-bold">ACOUSTIC AUDIO</span>
-        </div>
-      </motion.div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div className="max-w-6xl mx-auto text-center">
@@ -46,13 +34,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <AnimatedText 
-              text="Transformamos espaços em experiências sonoras perfeitas"
-              gradientColors="linear-gradient(90deg, #ffffff, #3b82f6, #ffffff)"
-              gradientAnimationDuration={3}
-              hoverEffect={true}
-              textClassName="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-            />
+            <h1 className="font-montserrat font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 tracking-wide">
+              TRANSFORMAMOS ESPAÇOS EM EXPERIÊNCIAS SONORAS PERFEITAS
+            </h1>
           </motion.div>
 
           {/* Subtitle */}
@@ -73,15 +57,15 @@ const HeroSection = () => {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 max-w-3xl mx-auto"
           >
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl sm:text-4xl font-bold text-acoustic-gold mb-2">25+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-acoustic-accent mb-2">25+</div>
               <div className="text-white/80 text-sm sm:text-base">Anos de experiência</div>
             </div>
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl sm:text-4xl font-bold text-acoustic-gold mb-2">1000+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-acoustic-accent mb-2">1000+</div>
               <div className="text-white/80 text-sm sm:text-base">Projetos realizados</div>
             </div>
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl sm:text-4xl font-bold text-acoustic-gold mb-2">100%</div>
+              <div className="text-3xl sm:text-4xl font-bold text-acoustic-accent mb-2">100%</div>
               <div className="text-white/80 text-sm sm:text-base">Satisfação garantida</div>
             </div>
           </motion.div>
@@ -96,7 +80,7 @@ const HeroSection = () => {
             <Button 
               onClick={() => scrollToSection('#products')} 
               size="lg" 
-              className="bg-acoustic-gold hover:bg-acoustic-gold/90 text-acoustic-dark font-bold px-8 py-4 text-lg rounded-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-acoustic-accent hover:bg-acoustic-accent/90 text-acoustic-dark font-bold px-8 py-4 text-lg rounded-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Play className="w-5 h-5 mr-2" />
               Ver Nossos Produtos
