@@ -47,7 +47,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
         {...props}
       >
         <motion.h1
-          className={cn("text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] leading-normal", textClassName)}
+          className={cn("text-4xl leading-normal", textClassName)}
           style={{
             background: gradientColors,
             backgroundSize: "200% auto",
