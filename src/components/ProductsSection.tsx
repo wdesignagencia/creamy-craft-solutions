@@ -1,131 +1,163 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import PixelTransition from "./PixelTransition";
-import espressoMachine from "@/assets/espresso-machine.jpg";
-import creamDispenser from "@/assets/cream-dispenser.jpg";
-import iceCreamMachine from "@/assets/ice-cream-machine.jpg";
-import coffeeShopInterior from "@/assets/coffee-shop-interior.jpg";
+import { motion } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Volume2, Zap, Award, CheckCircle } from 'lucide-react';
+import speakerSubwoofer from "@/assets/speaker-subwoofer.png";
+import lineArray from "@/assets/line-array.png";
+import columnSpeaker from "@/assets/column-speaker.png";
+import subwooferStudio from "@/assets/subwoofer-studio.jpg";
+import lineArrayVenue from "@/assets/line-array-venue.jpg";
+import columnSpeakerModern from "@/assets/column-speaker-modern.jpg";
 
 const ProductsSection = () => {
   const products = [
     {
       id: 1,
-      title: "Sistemas para Chantilly Premium",
-      description: "Equipamentos profissionais para chantilly perfeito em segundos",
-      features: ["Textura cremosa garantida", "Operação simples", "Alta durabilidade"],
-      image: creamDispenser,
-      demoImage: creamDispenser
+      title: "Line Arrays Profissionais",
+      description: "Sistemas line array de alto padrão para grandes eventos e venues",
+      features: ["Cobertura uniforme", "Potência superior", "Design modular", "Drivers italianos"],
+      image: lineArray,
+      demoImage: lineArrayVenue,
+      category: "Line Arrays"
     },
     {
       id: 2,
-      title: "Equipamentos de Gaseificação",
-      description: "Tecnologia avançada para bebidas com gás que surpreendem",
-      features: ["Gaseificação controlada", "Sabor preservado", "Apresentação impecável"],
-      image: espressoMachine,
-      demoImage: espressoMachine
+      title: "Subwoofers Studio",
+      description: "Graves profundos e controlados para estúdios e instalações fixas",
+      features: ["Resposta até 35Hz", "Madeira naval", "Alta potência", "Controle preciso"],
+      image: speakerSubwoofer,
+      demoImage: subwooferStudio,
+      category: "Subwoofers"
     },
     {
       id: 3,
-      title: "Máquinas para Cremes Especiais",
-      description: "Crie texturas cremosas irresistíveis para seus clientes",
-      features: ["Múltiplas texturas", "Controle de temperatura", "Design moderno"],
-      image: iceCreamMachine,
-      demoImage: iceCreamMachine
+      title: "Caixas Coluna Premium",
+      description: "Monitores de alta fidelidade para aplicações profissionais",
+      features: ["Som cristalino", "Design elegante", "Versátil", "Acabamento premium"],
+      image: columnSpeaker,
+      demoImage: columnSpeakerModern,
+      category: "Monitores"
     },
     {
       id: 4,
-      title: "Acessórios Profissionais",
-      description: "Complete sua operação com acessórios de alta qualidade",
-      features: ["Material premium", "Fácil manutenção", "Garantia estendida"],
-      image: coffeeShopInterior,
-      demoImage: coffeeShopInterior
+      title: "Point Sources Versáteis",
+      description: "Soluções compactas para instalações que exigem qualidade",
+      features: ["Tamanho compacto", "Som potente", "Múltiplas aplicações", "Fácil instalação"],
+      image: columnSpeaker,
+      demoImage: columnSpeakerModern,
+      category: "Point Sources"
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0
+    }
+  };
+
   return (
-    <section id="produtos" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-coffee-cream/5 to-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-coffee bg-clip-text text-transparent">
-            Produtos em Destaque
+    <section id="produtos" className="py-20 lg:py-32 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16 lg:mb-20"
+        >
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary font-medium mb-6">
+            <Volume2 className="w-4 h-4 mr-2" />
+            Nossos Produtos
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Equipamentos de
+            <span className="text-primary"> Alto Padrão</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-            Conheça nossa linha premium de equipamentos que estão revolucionando cafeterias e sorveterias em todo o país.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Fabricamos sistemas de áudio profissionais com componentes premium e tecnologia italiana
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
-          {products.map((product) => (
-            <Card 
-              key={product.id}
-              className="group overflow-hidden border-coffee-cream/20 hover:shadow-coffee-glow transition-all duration-300"
-            >
-              <CardHeader className="p-0">
-                <PixelTransition
-                  aspectRatio="75%"
-                  pixelColor="hsl(var(--coffee-primary))"
-                  firstContent={
-                    <div className="w-full h-full bg-gradient-coffee flex items-center justify-center">
-                      <img 
-                        src={product.image} 
-                        alt={product.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  }
-                  secondContent={
-                    <div className="w-full h-full bg-gradient-caramel flex items-center justify-center p-4">
-                      <div className="text-center text-coffee-cream">
-                        <h4 className="font-bold text-lg mb-2">Em Funcionamento</h4>
-                        <img 
-                          src={product.demoImage} 
-                          alt={`${product.title} em ação`}
-                          className="w-full h-32 object-cover rounded mb-2"
-                        />
-                        <p className="text-sm opacity-90">
-                          Veja o resultado final
-                        </p>
-                      </div>
-                    </div>
-                  }
-                />
-              </CardHeader>
-              <CardContent className="p-4 sm:p-6">
-                <CardTitle className="text-lg sm:text-xl mb-2 text-coffee-dark">
-                  {product.title}
-                </CardTitle>
-                <CardDescription className="mb-4 text-sm sm:text-base">
-                  {product.description}
-                </CardDescription>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {products.map((product, index) => (
+            <motion.div key={product.id} variants={itemVariants} transition={{ duration: 0.6 }}>
+              <Card className="group overflow-hidden hover:shadow-floating transition-all duration-500 border-0 bg-gradient-card backdrop-blur-sm h-full">
+                <div className="relative overflow-hidden">
+                  <div className="aspect-square overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {product.category}
+                    </span>
+                  </div>
+                </div>
                 
-                <ul className="space-y-2 mb-4 sm:mb-6">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-xs sm:text-sm text-muted-foreground">
-                      <div className="w-2 h-2 bg-gradient-caramel rounded-full mr-2 sm:mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {product.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {product.description}
+                  </p>
+                  
+                  <div className="space-y-2 mb-6">
+                    {product.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
 
-                <Button 
-                  className="w-full bg-gradient-coffee hover:bg-gradient-caramel hover:shadow-coffee-glow transition-all duration-300 text-sm sm:text-base"
-                >
-                  Ver Detalhes
-                </Button>
-              </CardContent>
-            </Card>
+                  <Button 
+                    variant="outline" 
+                    className="w-full group/btn hover:bg-primary/5 rounded-card border-primary/20"
+                  >
+                    <Award className="w-4 h-4 mr-2 text-primary" />
+                    <span className="font-semibold">Ver Detalhes</span>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center mt-8 sm:mt-12">
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-coffee-primary text-coffee-primary hover:bg-coffee-primary hover:text-coffee-cream px-6 sm:px-8 w-full sm:w-auto"
-          >
-            Ver Todos os Produtos
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-center mt-16"
+        >
+          <Button size="lg" className="bg-gradient-cta hover:shadow-glow text-acoustic-dark font-bold px-12 py-4 rounded-modern">
+            <Zap className="w-5 h-5 mr-2" />
+            Catálogo Completo
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
