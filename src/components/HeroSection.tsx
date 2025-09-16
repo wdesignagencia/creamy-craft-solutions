@@ -35,7 +35,8 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AnimatedText 
-              text="TRANSFORMAMOS ESPAÇOS EM EXPERIÊNCIAS SONORAS PERFEITAS"
+              text="TRANSFORMAMOS ESPAÇOS
+EM EXPERIÊNCIAS SONORAS PERFEITAS"
               gradientColors="linear-gradient(90deg, #ffffff, #6B90D9, #ffffff)"
               gradientAnimationDuration={3}
               hoverEffect={true}
