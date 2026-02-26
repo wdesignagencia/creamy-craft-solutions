@@ -1,0 +1,18 @@
+# Newtech Máquinas Industriais
+> Fabricante brasileira de moinhos de esferas verticais para
+> produção e refino de chocolates e pastas oleaginosas.
+> Tecnologia patenteada. Limoeiro, PE — Brasil.
+
+## Produtos
+- [Linha de Moinhos](/produtos): J10 a J500 — 10kg a 500kg/batelada
+- [Tanques de Armazenamento](/produtos#tanques): T1000D
+- [Fichas Técnicas](/downloads): PDFs por modelo
+
+## Tecnologia
+- [Como Funciona](/tecnologia): processo de 60 minutos
+- [Patente Newtech](/tecnologia#patente): diferencial vs Netzsch
+
+## Empresa
+- [Quem Somos](/sobre): história, Alex e Jair Garcia
+- [Segmentos](/segmentos): sorveterias, confeitarias, distribuidores
+- [Contato](/contato): orçamento e WhatsApp
