@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Produtos", href: "/produtos" },
   { label: "Tecnologia", href: "/tecnologia" },
   { label: "Quem Somos", href: "/sobre" },
-  { label: "Segmentos", href: "/#segmentos" },
+  { label: "Segmentos", href: "/segmentos" },
   { label: "Downloads", href: "/downloads" },
 ];
 
