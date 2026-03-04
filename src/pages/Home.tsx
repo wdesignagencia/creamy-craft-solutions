@@ -73,7 +73,7 @@ const Home = () => {
               { icon: Clock, number: "60 min", label: "Processo por batelada" },
               { icon: Microscope, number: "<25μm", label: "Granulometria final" },
               { icon: DollarSign, number: "1/3", label: "Do preço importado" },
-              { icon: Award, number: "50 anos", label: "De experiência técnica" },
+              { icon: Award, number: "40 anos", label: "De experiência técnica" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="text-center p-6 rounded-xl border bg-card shadow-card">
