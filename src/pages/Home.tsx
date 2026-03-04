@@ -227,7 +227,7 @@ const Home = () => {
                 Nossa <span>História</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Com mais de 50 anos de desenvolvimento industrial, a Newtech nasceu da experiência do engenheiro químico Jair Garcia, que desenvolveu a patente brasileira de moinhos de esferas verticais.
+                Com mais de 40 anos de desenvolvimento industrial, a Newtech nasceu da experiência em engenharia química aplicada à indústria alimentícia, resultando na patente brasileira de moinhos de esferas verticais.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Sediada em Limoeiro, PE, a Newtech atende todo o Brasil e o Mercosul, levando tecnologia de ponta para a indústria alimentícia.
