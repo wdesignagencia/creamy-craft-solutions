@@ -197,7 +197,7 @@ const Home = () => {
               <span>Segmentos</span> Atendidos
             </h2>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { icon: IceCreamCone, title: "Sorveterias", desc: "Produza coberturas esquimós, trufas, ganaches especiais e pastas de oleaginosas para suas receitas exclusivas." },
               { icon: CakeSlice, title: "Confeitarias e Panificação", desc: "Coberturas, recheios forneáveis e chocolates em barra para doces e sobremesas premium." },
