@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, HeartHandshake, Wrench, IceCreamCone, CakeSlice, Croissant, Truck } from "lucide-react";
+import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, HeartHandshake, Wrench, IceCreamCone, CakeSlice, Truck } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { products } from "@/data/products";
 import { Helmet } from "react-helmet-async";
@@ -45,7 +45,7 @@ const Home = () => {
           </FadeIn>
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-white/80 mt-6 max-w-xl leading-relaxed">
-              Moinhos de alta performance com tecnologia patenteada. Do cacau ao chocolate fino em 60 minutos.
+              Moinhos de alta performance com tecnologia patenteada. Dos ingredientes básicos brutos ao chocolate fino em 60 minutos.
             </p>
           </FadeIn>
           <FadeIn delay={400}>
@@ -73,7 +73,7 @@ const Home = () => {
               { icon: Clock, number: "60 min", label: "Processo por batelada" },
               { icon: Microscope, number: "<25μm", label: "Granulometria final" },
               { icon: DollarSign, number: "1/3", label: "Do preço importado" },
-              { icon: Award, number: "50 anos", label: "De experiência técnica" },
+              { icon: Award, number: "40 anos", label: "De experiência técnica" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="text-center p-6 rounded-xl border bg-card shadow-card">
@@ -172,10 +172,10 @@ const Home = () => {
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Award, title: "Tecnologia Patenteada", desc: "Patente brasileira exclusiva de moinho de esferas vertical." },
-              { icon: ShieldCheck, title: "Sem Vedação Hidráulica", desc: "Design aberto elimina manutenção cara e complexa." },
-              { icon: Clock, title: "60 Minutos de Processo", desc: "Do cacau ao chocolate refinado em uma única batelada." },
-              { icon: Wrench, title: "Suporte Técnico Incluso", desc: "Assistência técnica completa e peças de reposição." },
+              { icon: Award, title: "Tecnologia de Última Geração", desc: "Alta performance com mínima complexidade. Design aberto sem pressurização, painel de controle objetivo junto à máquina, mecânica operacional elementar de alta eficiência, eliminando manutenção de alto custo e complexa." },
+              { icon: Clock, title: "60 Minutos de Processo", desc: "Dos ingredientes básicos às coberturas, esquimós e trufas com granulometria inferior a 25 microns em uma única batelada." },
+              { icon: Wrench, title: "Suporte Técnico Incluso", desc: "Todas as formulações necessárias, assistência técnica completa e peças de reposição." },
+              { icon: ShieldCheck, title: "Sem Manutenção de Alto Custo", desc: "Mecânica simples e robusta, projetada para operar com o mínimo de intervenção técnica e máxima disponibilidade." },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="text-center p-6">
@@ -197,11 +197,10 @@ const Home = () => {
               <span>Segmentos</span> Atendidos
             </h2>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: IceCreamCone, title: "Sorveterias", desc: "Produza pastas e chocolates para suas receitas exclusivas." },
-              { icon: CakeSlice, title: "Confeitarias", desc: "Chocolate bean-to-bar para doces e sobremesas premium." },
-              { icon: Croissant, title: "Panificadoras", desc: "Recheios e coberturas com controle total de qualidade." },
+              { icon: IceCreamCone, title: "Sorveterias", desc: "Produza coberturas esquimós, trufas, ganaches especiais e pastas de oleaginosas para suas receitas exclusivas." },
+              { icon: CakeSlice, title: "Confeitarias e Panificação", desc: "Coberturas, recheios forneáveis e chocolates em barra para doces e sobremesas premium." },
               { icon: Truck, title: "Distribuidores", desc: "Produção em escala industrial para revenda." },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
@@ -228,7 +227,7 @@ const Home = () => {
                 Nossa <span>História</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Com mais de 50 anos de desenvolvimento industrial, a Newtech nasceu da experiência do engenheiro químico Jair Garcia, que desenvolveu a patente brasileira de moinhos de esferas verticais.
+                Com mais de 40 anos de desenvolvimento industrial, a Newtech nasceu da experiência em engenharia química aplicada à indústria alimentícia, resultando na patente brasileira de moinhos de esferas verticais.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Sediada em Limoeiro, PE, a Newtech atende todo o Brasil e o Mercosul, levando tecnologia de ponta para a indústria alimentícia.
