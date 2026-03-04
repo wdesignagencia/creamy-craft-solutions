@@ -58,7 +58,7 @@ const About = () => (
             <span>Atendemos</span> todo o Brasil e Mercosul
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Com sede em Limoeiro, PE, a Newtech atende clientes em todo o território nacional e países do Mercosul. Nosso parceiro comercial ArtGel / Amadeu Gonzales atua como representante comercial.
+            Com sede em Limoeiro, PE, a Newtech atende clientes em todo o território nacional e países do Mercosul. Nosso parceiro comercial ArtGel / Amadeu Gonsales atua como representante comercial.
           </p>
         </FadeIn>
       </div>
