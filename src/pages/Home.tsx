@@ -172,10 +172,10 @@ const Home = () => {
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Award, title: "Tecnologia Patenteada", desc: "Patente brasileira exclusiva de moinho de esferas vertical." },
-              { icon: ShieldCheck, title: "Sem Vedação Hidráulica", desc: "Design aberto elimina manutenção cara e complexa." },
-              { icon: Clock, title: "60 Minutos de Processo", desc: "Do cacau ao chocolate refinado em uma única batelada." },
-              { icon: Wrench, title: "Suporte Técnico Incluso", desc: "Assistência técnica completa e peças de reposição." },
+              { icon: Award, title: "Tecnologia de Última Geração", desc: "Alta performance com mínima complexidade. Design aberto sem pressurização, painel de controle objetivo junto à máquina, mecânica operacional elementar de alta eficiência, eliminando manutenção de alto custo e complexa." },
+              { icon: Clock, title: "60 Minutos de Processo", desc: "Dos ingredientes básicos às coberturas, esquimós e trufas com granulometria inferior a 25 microns em uma única batelada." },
+              { icon: Wrench, title: "Suporte Técnico Incluso", desc: "Todas as formulações necessárias, assistência técnica completa e peças de reposição." },
+              { icon: ShieldCheck, title: "Sem Manutenção de Alto Custo", desc: "Mecânica simples e robusta, projetada para operar com o mínimo de intervenção técnica e máxima disponibilidade." },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="text-center p-6">
