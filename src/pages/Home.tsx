@@ -37,7 +37,7 @@ const Home = () => {
       {/* Hero */}
       <section className="relative min-h-[600px] flex items-end bg-newtech-dark overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=1920&q=80')] bg-cover bg-center" />
+        <img src={heroChocolate} alt="Chocolate derretido sendo produzido por moinho de esferas Newtech" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
         <div className="relative z-20 container mx-auto px-4 pb-20 pt-40">
           <FadeIn>
             <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider text-white max-w-2xl leading-tight">
