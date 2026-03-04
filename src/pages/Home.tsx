@@ -199,9 +199,8 @@ const Home = () => {
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: IceCreamCone, title: "Sorveterias", desc: "Produza pastas e chocolates para suas receitas exclusivas." },
-              { icon: CakeSlice, title: "Confeitarias", desc: "Chocolate bean-to-bar para doces e sobremesas premium." },
-              { icon: Croissant, title: "Panificadoras", desc: "Recheios e coberturas com controle total de qualidade." },
+              { icon: IceCreamCone, title: "Sorveterias", desc: "Produza coberturas esquimós, trufas, ganaches especiais e pastas de oleaginosas para suas receitas exclusivas." },
+              { icon: CakeSlice, title: "Confeitarias e Panificação", desc: "Coberturas, recheios forneáveis e chocolates em barra para doces e sobremesas premium." },
               { icon: Truck, title: "Distribuidores", desc: "Produção em escala industrial para revenda." },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
