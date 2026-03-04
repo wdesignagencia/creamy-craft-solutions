@@ -45,7 +45,7 @@ const Home = () => {
           </FadeIn>
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-white/80 mt-6 max-w-xl leading-relaxed">
-              Moinhos de alta performance com tecnologia patenteada. Do cacau ao chocolate fino em 60 minutos.
+              Moinhos de alta performance com tecnologia patenteada. Dos ingredientes básicos brutos ao chocolate fino em 60 minutos.
             </p>
           </FadeIn>
           <FadeIn delay={400}>
