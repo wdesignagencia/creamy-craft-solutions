@@ -16,6 +16,7 @@ const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Technology = lazy(() => import("./pages/Technology"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Segmentos = lazy(() => import("./pages/Segmentos"));
 const Downloads = lazy(() => import("./pages/Downloads"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
