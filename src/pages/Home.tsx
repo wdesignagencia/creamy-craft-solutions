@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, HeartHandshake, Wrench, IceCreamCone, CakeSlice, Croissant, Truck } from "lucide-react";
+import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, HeartHandshake, Wrench, IceCreamCone, CakeSlice, Truck } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { products } from "@/data/products";
 import { Helmet } from "react-helmet-async";
