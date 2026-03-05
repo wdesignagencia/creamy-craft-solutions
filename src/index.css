@@ -7,19 +7,19 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 15 12% 21%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 15 12% 21%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 15 12% 21%;
 
     --primary: 36 78% 44%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary-foreground: 15 12% 21%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 27%;
@@ -39,8 +39,8 @@
     /* Newtech brand */
     --newtech-gold: 36 78% 44%;
     --newtech-gold-dark: 36 78% 37%;
-    --newtech-dark: 0 0% 10%;
-    --newtech-gray: 0 0% 27%;
+    --newtech-dark: 15 12% 21%;
+    --newtech-gray: 15 10% 30%;
     --newtech-light: 0 0% 96%;
 
     --shadow-card: 0 8px 32px rgba(0,0,0,0.10);
