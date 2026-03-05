@@ -4,7 +4,7 @@ import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, HeartHandshake,
 import FadeIn from "@/components/FadeIn";
 import { products } from "@/data/products";
 import { Helmet } from "react-helmet-async";
-import heroChocolate from "@/assets/hero-chocolate.jpg";
+import Balatro from "@/components/Balatro";
 
 const Home = () => {
   return (
