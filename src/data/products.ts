@@ -46,6 +46,7 @@ export const products: ProductData[] = [
     segments: ['Sorveterias', 'Confeitarias', 'Panificadoras'],
     description: 'Moinho versátil para produções médias. Ideal para sorveterias e confeitarias com demanda constante.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j60.pdf',
   },
   {
     slug: 'j120',
