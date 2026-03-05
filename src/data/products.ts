@@ -30,6 +30,7 @@ export const products: ProductData[] = [
     segments: ['Confeitarias', 'Sorveterias'],
     description: 'Moinho compacto ideal para confeitarias e pequenas produções artesanais de chocolate.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j10.pdf',
   },
   {
     slug: 'j60',
