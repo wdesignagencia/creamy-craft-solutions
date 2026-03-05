@@ -12,6 +12,7 @@ export interface ProductData {
   segments: string[];
   description: string;
   features: string[];
+  pdfUrl?: string;
 }
 
 export const products: ProductData[] = [
