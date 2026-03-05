@@ -12,6 +12,7 @@ export interface ProductData {
   segments: string[];
   description: string;
   features: string[];
+  pdfUrl?: string;
 }
 
 export const products: ProductData[] = [
@@ -29,6 +30,7 @@ export const products: ProductData[] = [
     segments: ['Confeitarias', 'Sorveterias'],
     description: 'Moinho compacto ideal para confeitarias e pequenas produções artesanais de chocolate.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j10.pdf',
   },
   {
     slug: 'j60',
@@ -44,6 +46,7 @@ export const products: ProductData[] = [
     segments: ['Sorveterias', 'Confeitarias', 'Panificadoras'],
     description: 'Moinho versátil para produções médias. Ideal para sorveterias e confeitarias com demanda constante.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j60.pdf',
   },
   {
     slug: 'j120',
@@ -59,6 +62,7 @@ export const products: ProductData[] = [
     segments: ['Sorveterias', 'Distribuidores', 'Panificadoras'],
     description: 'Moinho de alta capacidade para produções industriais de médio porte.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j120.pdf',
   },
   {
     slug: 'j240',
@@ -74,6 +78,7 @@ export const products: ProductData[] = [
     segments: ['Distribuidores', 'Panificadoras'],
     description: 'Moinho industrial para grandes volumes de produção diária.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j240.pdf',
   },
   {
     slug: 'j500',
@@ -89,6 +94,7 @@ export const products: ProductData[] = [
     segments: ['Distribuidores'],
     description: 'Nosso maior moinho, projetado para operações industriais de grande escala.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j500.pdf',
   },
   {
     slug: 't1000d',
@@ -104,6 +110,7 @@ export const products: ProductData[] = [
     segments: ['Distribuidores'],
     description: 'Tanque duplo de armazenamento para produto refinado, mantendo temperatura e qualidade.',
     features: ['Inox 304', 'Duplo tanque 500 kg', 'Controle de temperatura', 'Agitação contínua'],
+    pdfUrl: '/fichas/t1000d.pdf',
   },
 ];
 

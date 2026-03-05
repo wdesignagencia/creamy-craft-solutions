@@ -30,9 +30,11 @@ const Downloads = () => (
                 <Download className="h-10 w-10 text-primary mb-4" />
                 <h2 className="font-bold text-foreground text-lg">{p.name}</h2>
                 <p className="text-sm text-muted-foreground mt-1 mb-4">Ficha Técnica — {p.capacity}</p>
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg w-full font-semibold">
-                  <Download className="h-4 w-4 mr-2" /> Baixar PDF
-                </Button>
+                <a href={p.pdfUrl} download className="w-full">
+                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg w-full font-semibold">
+                    <Download className="h-4 w-4 mr-2" /> Baixar PDF
+                  </Button>
+                </a>
               </div>
             </FadeIn>
           ))}

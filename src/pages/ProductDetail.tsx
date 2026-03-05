@@ -69,9 +69,11 @@ const ProductDetail = () => {
                     Solicitar Orçamento
                   </Button>
                 </Link>
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg">
-                  <Download className="h-4 w-4 mr-2" /> Ficha PDF
-                </Button>
+                <a href={product.pdfUrl} download>
+                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg">
+                    <Download className="h-4 w-4 mr-2" /> Ficha PDF
+                  </Button>
+                </a>
               </div>
             </FadeIn>
           </div>
