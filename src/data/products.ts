@@ -110,6 +110,7 @@ export const products: ProductData[] = [
     segments: ['Distribuidores'],
     description: 'Tanque duplo de armazenamento para produto refinado, mantendo temperatura e qualidade.',
     features: ['Inox 304', 'Duplo tanque 500 kg', 'Controle de temperatura', 'Agitação contínua'],
+    pdfUrl: '/fichas/t1000d.pdf',
   },
 ];
 
