@@ -62,6 +62,7 @@ export const products: ProductData[] = [
     segments: ['Sorveterias', 'Distribuidores', 'Panificadoras'],
     description: 'Moinho de alta capacidade para produções industriais de médio porte.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j120.pdf',
   },
   {
     slug: 'j240',
