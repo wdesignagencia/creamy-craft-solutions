@@ -4,7 +4,7 @@ import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, HeartHandshake,
 import FadeIn from "@/components/FadeIn";
 import { products } from "@/data/products";
 import { Helmet } from "react-helmet-async";
-import heroChocolate from "@/assets/hero-chocolate.jpg";
+import Balatro from "@/components/Balatro";
 
 const Home = () => {
   return (
@@ -36,8 +36,8 @@ const Home = () => {
 
       {/* Hero */}
       <section className="relative min-h-[600px] flex items-end bg-newtech-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
-        <img src={heroChocolate} alt="Chocolate derretido sendo produzido por moinho de esferas Newtech" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
+        <Balatro />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10" />
         <div className="relative z-20 container mx-auto px-4 pb-20 pt-40">
           <FadeIn>
             <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider text-white max-w-2xl leading-tight">
