@@ -78,6 +78,7 @@ export const products: ProductData[] = [
     segments: ['Distribuidores', 'Panificadoras'],
     description: 'Moinho industrial para grandes volumes de produção diária.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j240.pdf',
   },
   {
     slug: 'j500',
