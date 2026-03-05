@@ -94,6 +94,7 @@ export const products: ProductData[] = [
     segments: ['Distribuidores'],
     description: 'Nosso maior moinho, projetado para operações industriais de grande escala.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
+    pdfUrl: '/fichas/j500.pdf',
   },
   {
     slug: 't1000d',
