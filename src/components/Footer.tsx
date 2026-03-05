@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import logoNewtech from "@/assets/logo-newtech.svg";
 
 const Footer = () => (
   <footer className="bg-newtech-dark text-white/80">
     <div className="container mx-auto px-4 py-16">
       <div className="grid md:grid-cols-4 gap-10">
         <div>
-          <h3 className="text-xl font-black text-primary uppercase tracking-wider mb-4">Newtech</h3>
+          <img src={logoNewtech} alt="Newtech" className="h-12 mb-4 brightness-0 invert" />
           <p className="text-sm leading-relaxed">
             Fabricante brasileira de moinhos de esferas verticais para produção de chocolate e pastas oleaginosas.
           </p>

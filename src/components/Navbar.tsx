@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoNewtech from "@/assets/logo-newtech.svg";
 
 const navLinks = [
   { label: "Produtos", href: "/produtos" },
@@ -19,8 +20,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur shadow-nav">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="text-2xl font-black tracking-wider text-primary uppercase">Newtech</span>
-          <span className="hidden sm:inline text-sm text-muted-foreground font-medium tracking-wide">Máquinas Industriais</span>
+          <img src={logoNewtech} alt="Newtech Máquinas Industriais" className="h-10" />
         </Link>
 
         {/* Desktop */}
