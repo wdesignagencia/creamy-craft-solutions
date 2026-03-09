@@ -26,9 +26,19 @@ const Technology = () => (
       })}</script>
     </Helmet>
 
-    {/* Hero */}
-    <section className="py-24 bg-newtech-dark text-white">
-      <div className="container mx-auto px-4 text-center">
+    {/* Hero with Video */}
+    <section className="relative py-24 text-white overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/j002.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-newtech-dark/75" />
+      <div className="relative z-10 container mx-auto px-4 text-center">
         <FadeIn>
           <h1 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4">
             <span className="text-primary">Tecnologia</span> Patenteada
