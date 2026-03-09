@@ -17,7 +17,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur shadow-nav">
+    <header className="sticky top-0 z-50 bg-transparent backdrop-blur-sm">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <img src={logoNewtech} alt="Newtech Máquinas Industriais" className="h-10" />

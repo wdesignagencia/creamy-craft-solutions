@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 15 12% 21%;
 
-    --primary: 36 78% 44%;
+    --primary: 22 56% 30%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
@@ -24,7 +24,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 27%;
 
-    --accent: 36 78% 44%;
+    --accent: 22 56% 30%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,13 +32,13 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 36 78% 44%;
+    --ring: 22 56% 30%;
 
     --radius: 0.5rem;
 
     /* Newtech brand */
-    --newtech-gold: 36 78% 44%;
-    --newtech-gold-dark: 36 78% 37%;
+    --newtech-gold: 22 56% 30%;
+    --newtech-gold-dark: 22 56% 24%;
     --newtech-dark: 15 12% 21%;
     --newtech-gray: 15 10% 30%;
     --newtech-light: 0 0% 96%;
