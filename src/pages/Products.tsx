@@ -23,17 +23,32 @@ const Products = () => {
         <link rel="canonical" href="https://www.newtechengenharia.com/produtos" />
       </Helmet>
 
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
+      {/* Video Hero */}
+      <section className="relative h-[50vh] min-h-[360px] flex items-center justify-center overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/j500.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-newtech-dark/70" />
+        <div className="relative z-10 text-center px-4">
           <FadeIn>
-            <h1 className="section-title text-center mb-4">
-              Nossos <span>Produtos</span>
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white mb-4">
+              Nossos <span className="text-primary">Produtos</span>
             </h1>
-            <p className="text-center text-muted-foreground mb-8 max-w-xl mx-auto">
+            <p className="text-lg text-white/70 max-w-xl mx-auto">
               Moinhos de esferas verticais e tanques de armazenamento para todas as escalas de produção.
             </p>
           </FadeIn>
+        </div>
+      </section>
 
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {filters.map(f => (
@@ -80,39 +95,91 @@ const Products = () => {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Comparison Table */}
+      {/* Veja em Ação */}
+      <section className="py-24 bg-secondary">
+        <div className="container mx-auto px-4">
           <FadeIn>
-            <div className="mt-20">
-              <h2 className="section-title text-center mb-8">
-                <span>Comparativo</span> de Modelos
-              </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm border-collapse">
-                  <thead>
-                    <tr className="bg-newtech-dark text-white">
-                      <th className="p-3 text-left font-bold">Modelo</th>
-                      <th className="p-3 text-left font-bold">Capacidade</th>
-                      <th className="p-3 text-left font-bold">Produção/Dia</th>
-                      <th className="p-3 text-left font-bold">Motor</th>
-                      <th className="p-3 text-left font-bold">Voltagem</th>
-                      <th className="p-3 text-left font-bold">Peso</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {products.map((p, i) => (
-                      <tr key={p.slug} className={i % 2 === 0 ? "bg-background" : "bg-secondary"}>
-                        <td className="p-3 font-semibold text-primary">{p.shortName}</td>
-                        <td className="p-3">{p.capacity}</td>
-                        <td className="p-3">{p.dailyProduction}</td>
-                        <td className="p-3">{p.motor || "—"}</td>
-                        <td className="p-3">{p.voltage}</td>
-                        <td className="p-3">{p.weight || "—"}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            <h2 className="section-title text-center mb-4">
+              Veja Nossos Moinhos <span>em Ação</span>
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
+              Acompanhe o funcionamento dos nossos equipamentos em operação real na indústria.
+            </p>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <FadeIn>
+              <div className="rounded-xl overflow-hidden shadow-card border">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full aspect-video object-cover"
+                >
+                  <source src="/videos/j002.mp4" type="video/mp4" />
+                </video>
+                <div className="p-4 bg-card">
+                  <p className="text-sm font-semibold text-foreground">Moinho de Laboratório</p>
+                  <p className="text-xs text-muted-foreground">Ideal para testes e pequenas bateladas</p>
+                </div>
               </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-xl overflow-hidden shadow-card border">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full aspect-video object-cover"
+                >
+                  <source src="/videos/j50.mp4" type="video/mp4" />
+                </video>
+                <div className="p-4 bg-card">
+                  <p className="text-sm font-semibold text-foreground">Moinho Industrial</p>
+                  <p className="text-xs text-muted-foreground">Produção contínua com alta eficiência</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <h2 className="section-title text-center mb-8">
+              <span>Comparativo</span> de Modelos
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-newtech-dark text-white">
+                    <th className="p-3 text-left font-bold">Modelo</th>
+                    <th className="p-3 text-left font-bold">Capacidade</th>
+                    <th className="p-3 text-left font-bold">Produção/Dia</th>
+                    <th className="p-3 text-left font-bold">Motor</th>
+                    <th className="p-3 text-left font-bold">Voltagem</th>
+                    <th className="p-3 text-left font-bold">Peso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {products.map((p, i) => (
+                    <tr key={p.slug} className={i % 2 === 0 ? "bg-background" : "bg-secondary"}>
+                      <td className="p-3 font-semibold text-primary">{p.shortName}</td>
+                      <td className="p-3">{p.capacity}</td>
+                      <td className="p-3">{p.dailyProduction}</td>
+                      <td className="p-3">{p.motor || "—"}</td>
+                      <td className="p-3">{p.voltage}</td>
+                      <td className="p-3">{p.weight || "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </FadeIn>
         </div>

@@ -240,8 +240,16 @@ const Home = () => {
               </Link>
             </FadeIn>
             <FadeIn delay={200}>
-              <div className="h-80 bg-muted rounded-xl flex items-center justify-center">
-                <Award className="h-20 w-20 text-muted-foreground/30" />
+              <div className="h-80 rounded-xl overflow-hidden shadow-card">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/j50.mp4" type="video/mp4" />
+                </video>
               </div>
             </FadeIn>
           </div>
