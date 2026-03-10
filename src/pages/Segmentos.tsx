@@ -61,31 +61,29 @@ const Segmentos = () => {
         />
       </Helmet>
 
-      {/* Header — clean, airy */}
+      {/* Header */}
       <section className="pt-40 pb-20">
         <div className="container mx-auto px-4">
           <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-4">
-              Segmentos
-            </p>
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wide text-foreground max-w-3xl leading-[1.1]">
-              Para quem é a&nbsp;
-              <span className="text-primary">Newtech</span>
+            <p className="label-uppercase mb-4">Aplicações</p>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground max-w-3xl leading-[1.1]">
+              Para quem é a{" "}
+              <span className="font-display italic">Newtech</span>
             </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-xl leading-relaxed">
+            <p className="text-lg text-muted-foreground mt-6 max-w-lg leading-relaxed">
               Equipamentos sob medida para cada tipo de operação na indústria alimentícia.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* Segments — editorial layout */}
-      <section className="pb-32">
+      {/* Segments */}
+      <section className="pb-28">
         <div className="container mx-auto px-4">
           {segments.map((seg, i) => (
             <FadeIn key={i} delay={i * 80}>
               <div
-                className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center py-20 ${
+                className={`grid md:grid-cols-2 gap-8 md:gap-20 items-center py-20 ${
                   i !== segments.length - 1 ? "border-b border-border" : ""
                 } ${i % 2 !== 0 ? "md:[direction:rtl]" : ""}`}
               >
@@ -94,16 +92,16 @@ const Segmentos = () => {
                   <img
                     src={seg.image}
                     alt={seg.title}
-                    className="w-full max-w-[380px] h-auto object-contain drop-shadow-2xl"
+                    className="w-full max-w-[340px] h-auto object-contain drop-shadow-xl"
                   />
                 </div>
 
                 {/* Content */}
                 <div className={`${i % 2 !== 0 ? "md:[direction:ltr]" : ""}`}>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-3">
+                  <p className="label-uppercase text-primary mb-3">
                     {seg.subtitle}
                   </p>
-                  <h2 className="text-3xl md:text-4xl font-black uppercase tracking-wide text-foreground mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
                     {seg.title}
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-8">
@@ -112,13 +110,13 @@ const Segmentos = () => {
                   <ul className="space-y-3 mb-10">
                     {seg.benefits.map((b, j) => (
                       <li key={j} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-1" />
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">{b}</span>
                       </li>
                     ))}
                   </ul>
                   <Link to="/contato">
-                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold rounded-full px-6">
+                    <Button variant="outline" className="rounded-full px-6 text-sm font-medium border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                       Solicitar Orçamento
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </Button>
@@ -130,22 +128,22 @@ const Segmentos = () => {
         </div>
       </section>
 
-      {/* CTA — subtle */}
+      {/* CTA */}
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <FadeIn>
-            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-wider text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4">
               Não encontrou seu segmento?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              Nossos moinhos são versáteis e podem atender diferentes aplicações. Fale com um especialista.
+              Nossos moinhos são versáteis e atendem diferentes aplicações. Fale com um especialista.
             </p>
             <a
               href="https://wa.me/5581994185453?text=Olá! Gostaria de saber mais sobre os moinhos Newtech para o meu segmento."
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="rounded-full px-8 font-semibold">
+              <Button className="rounded-full px-8 text-sm font-medium">
                 Fale pelo WhatsApp
               </Button>
             </a>

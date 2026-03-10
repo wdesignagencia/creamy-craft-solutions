@@ -20,6 +20,8 @@ const schema = z.object({
 const segments = ["Sorveteria", "Confeitaria", "Panificadora", "Distribuidora", "Indústria", "Outro"];
 const budgets = ["Até R$ 50 mil", "R$ 50–100 mil", "R$ 100–200 mil", "Acima de R$ 200 mil", "Não definido"];
 
+const inputClass = "w-full mt-1.5 px-4 py-3 border border-border rounded-xl bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors";
+
 const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", company: "", segment: "", capacity: "", region: "", timeline: "", budget: "", message: "" });
@@ -61,15 +63,18 @@ const Contact = () => {
         })}</script>
       </Helmet>
 
-      <section className="py-24 bg-background">
+      <section className="pt-40 pb-28">
         <div className="container mx-auto px-4">
           <FadeIn>
-            <h1 className="section-title text-center mb-4">
-              <span>Solicitar</span> Orçamento
-            </h1>
-            <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-              Preencha o formulário e nossa equipe entrará em contato rapidamente.
-            </p>
+            <div className="text-center mb-16">
+              <p className="label-uppercase mb-3">Contato</p>
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+                Solicitar <span className="font-display italic">Orçamento</span>
+              </h1>
+              <p className="text-muted-foreground mt-4 max-w-md mx-auto">
+                Preencha o formulário e nossa equipe entrará em contato rapidamente.
+              </p>
+            </div>
           </FadeIn>
 
           <div className="grid lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
@@ -79,51 +84,51 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-sm font-semibold text-foreground">Nome completo *</label>
-                      <input className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm" value={form.name} onChange={e => update("name", e.target.value)} />
+                      <label className="text-sm font-medium text-foreground">Nome completo *</label>
+                      <input className={inputClass} value={form.name} onChange={e => update("name", e.target.value)} />
                       {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
                     </div>
                     <div>
-                      <label className="text-sm font-semibold text-foreground">Empresa</label>
-                      <input className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm" value={form.company} onChange={e => update("company", e.target.value)} />
+                      <label className="text-sm font-medium text-foreground">Empresa</label>
+                      <input className={inputClass} value={form.company} onChange={e => update("company", e.target.value)} />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-sm font-semibold text-foreground">Segmento *</label>
-                      <select className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm" value={form.segment} onChange={e => update("segment", e.target.value)}>
+                      <label className="text-sm font-medium text-foreground">Segmento *</label>
+                      <select className={inputClass} value={form.segment} onChange={e => update("segment", e.target.value)}>
                         <option value="">Selecione...</option>
                         {segments.map(s => <option key={s} value={s}>{s}</option>)}
                       </select>
                       {errors.segment && <p className="text-destructive text-xs mt-1">{errors.segment}</p>}
                     </div>
                     <div>
-                      <label className="text-sm font-semibold text-foreground">Capacidade desejada (kg)</label>
-                      <input className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm" placeholder="Ex: 60 kg/batelada" value={form.capacity} onChange={e => update("capacity", e.target.value)} />
+                      <label className="text-sm font-medium text-foreground">Capacidade desejada</label>
+                      <input className={inputClass} placeholder="Ex: 60 kg/batelada" value={form.capacity} onChange={e => update("capacity", e.target.value)} />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-sm font-semibold text-foreground">Região</label>
-                      <input className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm" placeholder="Cidade / Estado" value={form.region} onChange={e => update("region", e.target.value)} />
+                      <label className="text-sm font-medium text-foreground">Região</label>
+                      <input className={inputClass} placeholder="Cidade / Estado" value={form.region} onChange={e => update("region", e.target.value)} />
                     </div>
                     <div>
-                      <label className="text-sm font-semibold text-foreground">Prazo</label>
-                      <input className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm" placeholder="Ex: 3 meses" value={form.timeline} onChange={e => update("timeline", e.target.value)} />
+                      <label className="text-sm font-medium text-foreground">Prazo</label>
+                      <input className={inputClass} placeholder="Ex: 3 meses" value={form.timeline} onChange={e => update("timeline", e.target.value)} />
                     </div>
                   </div>
                   <div>
-                    <label className="text-sm font-semibold text-foreground">Orçamento disponível</label>
-                    <select className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm" value={form.budget} onChange={e => update("budget", e.target.value)}>
+                    <label className="text-sm font-medium text-foreground">Orçamento disponível</label>
+                    <select className={inputClass} value={form.budget} onChange={e => update("budget", e.target.value)}>
                       <option value="">Selecione...</option>
                       {budgets.map(b => <option key={b} value={b}>{b}</option>)}
                     </select>
                   </div>
                   <div>
-                    <label className="text-sm font-semibold text-foreground">Mensagem</label>
-                    <textarea className="w-full mt-1 p-3 border rounded-lg bg-background text-foreground text-sm h-28 resize-none" value={form.message} onChange={e => update("message", e.target.value)} />
+                    <label className="text-sm font-medium text-foreground">Mensagem</label>
+                    <textarea className={`${inputClass} h-28 resize-none`} value={form.message} onChange={e => update("message", e.target.value)} />
                   </div>
-                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-newtech-gold-dark text-primary-foreground font-bold rounded-lg text-base">
+                  <Button type="submit" size="lg" className="w-full rounded-xl text-sm font-medium">
                     Enviar via WhatsApp
                   </Button>
                 </form>
@@ -133,20 +138,20 @@ const Contact = () => {
             {/* Info */}
             <div>
               <FadeIn delay={200}>
-                <div className="space-y-6">
-                  <div className="p-6 bg-secondary rounded-xl">
-                    <Phone className="h-6 w-6 text-primary mb-2" />
-                    <h3 className="font-bold text-foreground">WhatsApp</h3>
-                    <a href="https://wa.me/5581994185453" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">(81) 99418-5453</a>
-                  </div>
-                  <div className="p-6 bg-secondary rounded-xl">
-                    <Mail className="h-6 w-6 text-primary mb-2" />
-                    <h3 className="font-bold text-foreground">Email</h3>
-                    <a href="mailto:comercial@newtechengenharia.com" className="text-sm text-primary hover:underline">comercial@newtechengenharia.com</a>
-                  </div>
-                  <div className="p-6 bg-secondary rounded-xl">
-                    <MapPin className="h-6 w-6 text-primary mb-2" />
-                    <h3 className="font-bold text-foreground">Endereço</h3>
+                <div className="space-y-4">
+                  {[
+                    { icon: Phone, label: "WhatsApp", value: "(81) 99418-5453", href: "https://wa.me/5581994185453" },
+                    { icon: Mail, label: "Email", value: "comercial@newtechengenharia.com", href: "mailto:comercial@newtechengenharia.com" },
+                  ].map((item, i) => (
+                    <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="block p-5 bg-secondary rounded-2xl hover:bg-muted transition-colors group">
+                      <item.icon className="h-5 w-5 text-primary mb-2" />
+                      <p className="font-medium text-foreground text-sm">{item.label}</p>
+                      <p className="text-sm text-primary group-hover:underline underline-offset-2">{item.value}</p>
+                    </a>
+                  ))}
+                  <div className="p-5 bg-secondary rounded-2xl">
+                    <MapPin className="h-5 w-5 text-primary mb-2" />
+                    <p className="font-medium text-foreground text-sm">Endereço</p>
                     <p className="text-sm text-muted-foreground">Rua Jerônimo Heráclio, 1700A<br />Limoeiro, PE — 55700-000</p>
                   </div>
                 </div>

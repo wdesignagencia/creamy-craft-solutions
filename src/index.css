@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,45 +6,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 15 12% 21%;
+    --background: 30 15% 97%;
+    --foreground: 20 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 15 12% 21%;
+    --card: 30 15% 99%;
+    --card-foreground: 20 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 15 12% 21%;
+    --popover: 30 15% 99%;
+    --popover-foreground: 20 10% 15%;
 
-    --primary: 22 56% 30%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 20 45% 28%;
+    --primary-foreground: 40 30% 96%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 15 12% 21%;
+    --secondary: 30 12% 93%;
+    --secondary-foreground: 20 10% 15%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 27%;
+    --muted: 25 10% 92%;
+    --muted-foreground: 20 8% 46%;
 
-    --accent: 22 56% 30%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 20 45% 28%;
+    --accent-foreground: 40 30% 96%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 22 56% 30%;
+    --border: 25 10% 90%;
+    --input: 25 10% 88%;
+    --ring: 20 45% 28%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Newtech brand */
-    --newtech-gold: 22 56% 30%;
-    --newtech-gold-dark: 22 56% 24%;
-    --newtech-dark: 15 12% 21%;
-    --newtech-gray: 15 10% 30%;
-    --newtech-light: 0 0% 96%;
+    /* Brand tokens */
+    --newtech-gold: 20 45% 28%;
+    --newtech-gold-dark: 20 45% 22%;
+    --newtech-dark: 20 12% 12%;
+    --newtech-gray: 20 8% 30%;
+    --newtech-light: 30 15% 97%;
+    --newtech-warm: 30 20% 95%;
 
-    --shadow-card: 0 8px 32px rgba(0,0,0,0.10);
-    --shadow-nav: 0 2px 16px rgba(0,0,0,0.06);
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    --shadow-nav: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-elevated: 0 8px 30px rgba(0,0,0,0.06);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -62,10 +64,11 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-barlow antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-barlow;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
 }
 
@@ -74,10 +77,21 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Section title bicolor pattern */
+/* Display font for editorial headings */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Section title pattern — refined */
 .section-title {
-  @apply text-3xl md:text-4xl font-black uppercase tracking-wider text-newtech-dark;
+  @apply text-3xl md:text-4xl font-bold tracking-tight;
+  color: hsl(var(--foreground));
 }
 .section-title span {
   @apply text-primary;
+}
+
+/* Refined label style */
+.label-uppercase {
+  @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground;
 }

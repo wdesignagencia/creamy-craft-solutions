@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { getProduct, products } from "@/data/products";
 import { Button } from "@/components/ui/button";
-import { Cog, ArrowLeft, Download } from "lucide-react";
+import { Cog, ArrowLeft, Download, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { Helmet } from "react-helmet-async";
 
@@ -11,9 +11,9 @@ const ProductDetail = () => {
 
   if (!product) {
     return (
-      <div className="py-24 text-center container mx-auto px-4">
+      <div className="pt-40 pb-24 text-center container mx-auto px-4">
         <h1 className="text-2xl font-bold mb-4">Produto não encontrado</h1>
-        <Link to="/produtos"><Button>Ver todos os produtos</Button></Link>
+        <Link to="/produtos"><Button className="rounded-full">Ver todos os produtos</Button></Link>
       </div>
     );
   }
@@ -41,52 +41,46 @@ const ProductDetail = () => {
         })}</script>
       </Helmet>
 
-      <section className="py-24 bg-background">
+      <section className="pt-32 pb-28">
         <div className="container mx-auto px-4">
-          <Link to="/produtos" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8">
-            <ArrowLeft className="h-4 w-4" /> Voltar para Produtos
+          <Link to="/produtos" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-10 transition-colors">
+            <ArrowLeft className="h-4 w-4" /> Produtos
           </Link>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-16">
             <FadeIn>
-              <div className="h-80 md:h-[450px] bg-secondary rounded-xl flex items-center justify-center shadow-card">
-                <Cog className="h-24 w-24 text-muted-foreground/30" />
+              <div className="aspect-square bg-secondary rounded-2xl flex items-center justify-center">
+                <Cog className="h-20 w-20 text-muted-foreground/15" />
               </div>
             </FadeIn>
 
-            <FadeIn delay={200}>
-              <h1 className="text-3xl md:text-4xl font-black uppercase tracking-wider text-foreground mb-2">
-                {product.name}
-              </h1>
-              <p className="text-primary font-semibold uppercase text-sm tracking-wider mb-6">
-                {product.type === 'moinho' ? 'Moinho de Esferas Vertical' : 'Tanque de Armazenamento'}
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">{product.description}</p>
+            <FadeIn delay={150}>
+              <div>
+                <p className="label-uppercase text-primary mb-3">
+                  {product.type === 'moinho' ? 'Moinho de Esferas Vertical' : 'Tanque de Armazenamento'}
+                </p>
+                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+                  {product.name}
+                </h1>
+                <p className="text-muted-foreground leading-relaxed mb-10">{product.description}</p>
 
-              <div className="flex gap-4 mb-8">
-                <Link to="/contato">
-                  <Button size="lg" className="bg-primary hover:bg-newtech-gold-dark text-primary-foreground font-bold rounded-lg">
-                    Solicitar Orçamento
-                  </Button>
-                </Link>
-                <a href={product.pdfUrl} download>
-                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg">
-                    <Download className="h-4 w-4 mr-2" /> Ficha PDF
-                  </Button>
-                </a>
-              </div>
-            </FadeIn>
-          </div>
+                <div className="flex gap-3 mb-12">
+                  <Link to="/contato">
+                    <Button size="lg" className="rounded-full px-8 text-sm font-medium">
+                      Solicitar Orçamento
+                    </Button>
+                  </Link>
+                  <a href={product.pdfUrl} download>
+                    <Button size="lg" variant="outline" className="rounded-full px-6 text-sm font-medium border-border hover:border-primary hover:text-primary">
+                      <Download className="h-4 w-4 mr-2" /> PDF
+                    </Button>
+                  </a>
+                </div>
 
-          {/* Specs Table */}
-          <FadeIn>
-            <div className="mt-16">
-              <h2 className="section-title mb-8">
-                <span>Ficha</span> Técnica
-              </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full max-w-2xl text-sm">
-                  <tbody>
+                {/* Specs */}
+                <div className="border-t border-border pt-8">
+                  <p className="label-uppercase mb-5">Especificações</p>
+                  <div className="space-y-0">
                     {[
                       ["Capacidade", product.capacity],
                       ["Produção/Dia", product.dailyProduction],
@@ -99,16 +93,16 @@ const ProductDetail = () => {
                       ["Tempo/Batelada", "60 minutos"],
                       ["Granulometria", "< 25 microns"],
                     ].map(([label, value], i) => (
-                      <tr key={label} className={i % 2 === 0 ? "bg-secondary" : "bg-background"}>
-                        <td className="p-3 font-semibold text-foreground w-48">{label}</td>
-                        <td className="p-3 text-muted-foreground">{value}</td>
-                      </tr>
+                      <div key={label} className="flex justify-between py-3 border-b border-border/50 text-sm">
+                        <span className="text-muted-foreground">{label}</span>
+                        <span className="font-medium text-foreground">{value}</span>
+                      </div>
                     ))}
-                  </tbody>
-                </table>
+                  </div>
+                </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </>

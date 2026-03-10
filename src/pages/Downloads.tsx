@@ -12,30 +12,35 @@ const Downloads = () => (
       <link rel="canonical" href="https://www.newtechengenharia.com/downloads" />
     </Helmet>
 
-    <section className="py-24 bg-background">
+    <section className="pt-40 pb-28">
       <div className="container mx-auto px-4">
         <FadeIn>
-          <h1 className="section-title text-center mb-4">
-            <span>Downloads</span>
-          </h1>
-          <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-            Fichas técnicas em PDF para consulta e impressão.
-          </p>
+          <div className="text-center mb-16">
+            <p className="label-uppercase mb-3">Documentos</p>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+              Fichas <span className="font-display italic">Técnicas</span>
+            </h1>
+            <p className="text-muted-foreground mt-4 max-w-md mx-auto">
+              PDFs para consulta e impressão com todas as especificações.
+            </p>
+          </div>
         </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
           {products.map((p, i) => (
-            <FadeIn key={p.slug} delay={i * 80}>
-              <div className="bg-card rounded-xl shadow-card border p-6 flex flex-col items-center text-center">
-                <Download className="h-10 w-10 text-primary mb-4" />
-                <h2 className="font-bold text-foreground text-lg">{p.name}</h2>
-                <p className="text-sm text-muted-foreground mt-1 mb-4">Ficha Técnica — {p.capacity}</p>
-                <a href={p.pdfUrl} download className="w-full">
-                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg w-full font-semibold">
-                    <Download className="h-4 w-4 mr-2" /> Baixar PDF
-                  </Button>
-                </a>
-              </div>
+            <FadeIn key={p.slug} delay={i * 60}>
+              <a href={p.pdfUrl} download className="group block p-6 rounded-2xl border border-border/50 bg-card hover:border-primary/30 hover:shadow-elevated transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h2 className="font-semibold text-foreground group-hover:text-primary transition-colors">{p.name}</h2>
+                    <p className="text-xs text-muted-foreground mt-0.5">{p.capacity}</p>
+                  </div>
+                  <div className="w-9 h-9 rounded-full bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                    <Download className="h-4 w-4 text-primary" />
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground">Ficha técnica — PDF</p>
+              </a>
             </FadeIn>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import FadeIn from "@/components/FadeIn";
-import { ShieldCheck, ArrowRightLeft, Cog, Clock, Microscope, HelpCircle } from "lucide-react";
+import { ShieldCheck, ArrowRightLeft, Cog, Microscope } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 const steps = [
@@ -26,58 +26,56 @@ const Technology = () => (
       })}</script>
     </Helmet>
 
-    {/* Hero with Video */}
-    <section className="relative py-24 text-white overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
+    {/* Hero */}
+    <section className="relative py-32 text-white overflow-hidden">
+      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
         <source src="/videos/j002.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-newtech-dark/75" />
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+      <div className="relative z-10 container mx-auto px-4">
         <FadeIn>
-          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4">
-            <span className="text-primary">Tecnologia</span> Patenteada
+          <p className="label-uppercase text-white/40 mb-4">Como funciona</p>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight max-w-2xl">
+            Tecnologia <span className="font-display italic">Patenteada</span>
           </h1>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Entenda como nossos moinhos de esferas verticais revolucionam a produção de chocolate.
+          <p className="text-lg text-white/50 max-w-lg mt-6">
+            Entenda como nossos moinhos verticais revolucionam a produção de chocolate.
           </p>
         </FadeIn>
       </div>
     </section>
 
     {/* Vertical vs Horizontal */}
-    <section className="py-24 bg-background">
+    <section className="py-28">
       <div className="container mx-auto px-4">
         <FadeIn>
-          <h2 className="section-title text-center mb-12">
-            Moinho <span>Vertical</span> vs Horizontal
-          </h2>
+          <div className="text-center mb-16">
+            <p className="label-uppercase mb-3">Comparativo</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+              Vertical vs <span className="font-display italic">Horizontal</span>
+            </h2>
+          </div>
         </FadeIn>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <FadeIn>
-            <div className="p-8 bg-card rounded-xl shadow-card border-2 border-primary">
-              <h3 className="text-xl font-bold text-primary mb-4 uppercase">Vertical (Newtech)</h3>
-              <ul className="space-y-3 text-muted-foreground text-sm">
+            <div className="p-8 rounded-2xl border-2 border-primary bg-card">
+              <p className="label-uppercase text-primary mb-6">Vertical — Newtech</p>
+              <ul className="space-y-4 text-muted-foreground text-sm">
                 {["Sem pressão interna", "Sem vedação hidráulica cara", "Manutenção simples e barata", "Operação aberta e acessível", "Troca de esferas facilitada"].map((t, i) => (
-                  <li key={i} className="flex items-center gap-2">
+                  <li key={i} className="flex items-center gap-3">
                     <ShieldCheck className="h-4 w-4 text-primary shrink-0" /> {t}
                   </li>
                 ))}
               </ul>
             </div>
           </FadeIn>
-          <FadeIn delay={200}>
-            <div className="p-8 bg-card rounded-xl shadow-card border">
-              <h3 className="text-xl font-bold text-muted-foreground mb-4 uppercase">Horizontal (Convencional)</h3>
-              <ul className="space-y-3 text-muted-foreground text-sm">
+          <FadeIn delay={150}>
+            <div className="p-8 rounded-2xl border border-border bg-card">
+              <p className="label-uppercase mb-6">Horizontal — Convencional</p>
+              <ul className="space-y-4 text-muted-foreground text-sm">
                 {["Alta pressão interna", "Vedação hidráulica de alto custo", "Manutenção complexa e cara", "Sistema fechado", "Troca de esferas trabalhosa"].map((t, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <ArrowRightLeft className="h-4 w-4 text-muted-foreground/50 shrink-0" /> {t}
+                  <li key={i} className="flex items-center gap-3">
+                    <ArrowRightLeft className="h-4 w-4 text-muted-foreground/40 shrink-0" /> {t}
                   </li>
                 ))}
               </ul>
@@ -88,20 +86,23 @@ const Technology = () => (
     </section>
 
     {/* Process Steps */}
-    <section className="py-24 bg-secondary">
+    <section className="py-28 bg-secondary">
       <div className="container mx-auto px-4">
         <FadeIn>
-          <h2 className="section-title text-center mb-12">
-            Como <span>Funciona</span>
-          </h2>
+          <div className="text-center mb-16">
+            <p className="label-uppercase mb-3">Processo</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+              Como <span className="font-display italic">Funciona</span>
+            </h2>
+          </div>
         </FadeIn>
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-2xl mx-auto space-y-4">
           {steps.map((s, i) => (
-            <FadeIn key={i} delay={i * 100}>
-              <div className="flex gap-6 items-start p-6 bg-background rounded-xl shadow-card">
-                <span className="text-3xl font-black text-primary">{s.num}</span>
+            <FadeIn key={i} delay={i * 80}>
+              <div className="flex gap-6 items-start p-6 bg-card rounded-2xl border border-border/50">
+                <span className="text-2xl font-bold text-primary/30">{s.num}</span>
                 <div>
-                  <h3 className="font-bold text-foreground text-lg">{s.title}</h3>
+                  <h3 className="font-semibold text-foreground">{s.title}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
                 </div>
               </div>
@@ -112,62 +113,62 @@ const Technology = () => (
     </section>
 
     {/* Patent */}
-    <section id="patente" className="py-24 bg-background">
-      <div className="container mx-auto px-4 max-w-3xl">
+    <section className="py-28">
+      <div className="container mx-auto px-4 max-w-2xl text-center">
         <FadeIn>
-          <h2 className="section-title text-center mb-8">
-            <span>Patente</span> Brasileira
+          <p className="label-uppercase mb-3">Exclusividade</p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+            Patente <span className="font-display italic">Brasileira</span>
           </h2>
-          <div className="p-8 bg-card rounded-xl shadow-card border text-center">
-            <Cog className="h-16 w-16 text-primary mx-auto mb-4" />
-            <p className="text-muted-foreground leading-relaxed">
-              A Newtech possui patente brasileira exclusiva para moinhos de esferas verticais. Nosso design elimina a necessidade de vedação hidráulica, reduzindo custos de manutenção em até 70% comparado a modelos horizontais tradicionais como o Netzsch.
-            </p>
-          </div>
+          <p className="text-muted-foreground leading-relaxed">
+            A Newtech possui patente brasileira exclusiva para moinhos de esferas verticais. Nosso design elimina a necessidade de vedação hidráulica, reduzindo custos de manutenção em até 70% comparado a modelos horizontais tradicionais.
+          </p>
         </FadeIn>
       </div>
     </section>
 
     {/* Granulometry */}
-    <section className="py-24 bg-secondary">
-      <div className="container mx-auto px-4 text-center max-w-3xl">
+    <section className="py-28 bg-secondary">
+      <div className="container mx-auto px-4 text-center max-w-2xl">
         <FadeIn>
-          <Microscope className="h-16 w-16 text-primary mx-auto mb-4" />
-          <h2 className="section-title mb-6">
-            Granulometria <span>&lt;25 microns</span>
+          <div className="w-14 h-14 rounded-full bg-primary/8 flex items-center justify-center mx-auto mb-6">
+            <Microscope className="h-6 w-6 text-primary" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+            Granulometria <span className="font-display italic">&lt;25μm</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            A granulometria inferior a 25 microns garante textura ultra-suave, imperceptível ao paladar humano. Essencial para chocolates finos, recheios premium e sorvetes artesanais de alta qualidade.
+            A granulometria inferior a 25 microns garante textura ultra-suave, imperceptível ao paladar humano. Essencial para chocolates finos, recheios premium e sorvetes artesanais.
           </p>
         </FadeIn>
       </div>
     </section>
 
     {/* FAQ */}
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4 max-w-3xl">
+    <section className="py-28">
+      <div className="container mx-auto px-4 max-w-2xl">
         <FadeIn>
-          <h2 className="section-title text-center mb-12">
-            Perguntas <span>Frequentes</span>
-          </h2>
+          <div className="text-center mb-16">
+            <p className="label-uppercase mb-3">Dúvidas</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+              Perguntas <span className="font-display italic">Frequentes</span>
+            </h2>
+          </div>
         </FadeIn>
-        {[
-          { q: "O que é um moinho de esferas vertical?", a: "É um equipamento que refina partículas sólidas através de esferas de cromo duro em um cilindro vertical, sem necessidade de vedação hidráulica, permitindo operação mais simples e econômica." },
-          { q: "Quanto tempo leva para produzir chocolate?", a: "60 minutos por batelada. O processo completo de refinamento produz chocolate com granulometria inferior a 25 microns." },
-          { q: "Qual a diferença para moinhos importados?", a: "Além do custo até 1/3 menor, nossos moinhos verticais não utilizam vedação hidráulica, reduzindo drasticamente o custo de manutenção." },
-        ].map((faq, i) => (
-          <FadeIn key={i} delay={i * 100}>
-            <div className="p-6 bg-card rounded-xl shadow-card border mb-4">
-              <div className="flex items-start gap-3">
-                <HelpCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-bold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground">{faq.a}</p>
-                </div>
+        <div className="space-y-4">
+          {[
+            { q: "O que é um moinho de esferas vertical?", a: "É um equipamento que refina partículas sólidas através de esferas de cromo duro em um cilindro vertical, sem necessidade de vedação hidráulica." },
+            { q: "Quanto tempo leva para produzir chocolate?", a: "60 minutos por batelada, produzindo chocolate com granulometria inferior a 25 microns." },
+            { q: "Qual a diferença para moinhos importados?", a: "Custo até 1/3 menor e sem vedação hidráulica, reduzindo drasticamente o custo de manutenção." },
+          ].map((faq, i) => (
+            <FadeIn key={i} delay={i * 80}>
+              <div className="p-6 rounded-2xl border border-border bg-card">
+                <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
               </div>
-            </div>
-          </FadeIn>
-        ))}
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   </>
