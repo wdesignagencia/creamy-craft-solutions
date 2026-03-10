@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, HeartHandshake, Wrench, IceCreamCone, CakeSlice, Truck } from "lucide-react";
+import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, Wrench, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { products } from "@/data/products";
 import { Helmet } from "react-helmet-async";
 import Balatro from "@/components/Balatro";
+
+import segSorveterias from "@/assets/segment-sorveterias.png";
+import segConfeitarias from "@/assets/segment-confeitarias.png";
+import segDistribuidores from "@/assets/segment-distribuidores.png";
 
 const Home = () => {
   return (
@@ -35,30 +39,33 @@ const Home = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative min-h-[600px] flex items-end bg-newtech-dark overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-end bg-newtech-dark overflow-hidden">
         <Balatro />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10" />
-        <div className="relative z-20 container mx-auto px-4 pb-20 pt-40">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
+        <div className="relative z-20 container mx-auto px-4 pb-24 pt-40">
           <FadeIn>
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider text-white max-w-2xl leading-tight">
-              <span className="text-primary">Produza</span> Seu Próprio Chocolate
+            <p className="label-uppercase text-background/50 mb-4">Moinhos de Esferas Verticais</p>
+            <h1 className="text-5xl md:text-7xl font-bold text-white max-w-3xl leading-[1.05] tracking-tight">
+              Produza seu próprio{" "}
+              <span className="font-display italic text-primary-foreground">chocolate</span>
             </h1>
           </FadeIn>
           <FadeIn delay={200}>
-            <p className="text-lg md:text-xl text-white/80 mt-6 max-w-xl leading-relaxed">
-              Moinhos de alta performance com tecnologia patenteada. Dos ingredientes básicos brutos ao chocolate fino em 60 minutos.
+            <p className="text-lg text-white/60 mt-6 max-w-lg leading-relaxed">
+              Dos ingredientes brutos ao chocolate fino em 60 minutos. Tecnologia patenteada, fabricação brasileira.
             </p>
           </FadeIn>
           <FadeIn delay={400}>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-wrap gap-4 mt-10">
               <Link to="/produtos">
-                <Button size="lg" className="bg-primary hover:bg-newtech-gold-dark text-primary-foreground font-bold rounded-lg text-base px-8">
-                  Ver Moinhos
+                <Button size="lg" className="rounded-full px-8 text-sm font-medium">
+                  Conheça os moinhos
+                  <ArrowRight className="h-4 w-4 ml-1" />
                 </Button>
               </Link>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold rounded-lg text-base px-8">
-                  Fale Conosco
+                <Button size="lg" variant="outline" className="rounded-full px-8 text-sm font-medium border-white/20 text-white hover:bg-white/10 hover:text-white">
+                  Fale conosco
                 </Button>
               </Link>
             </div>
@@ -66,20 +73,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Credibility Numbers */}
-      <section className="py-20 bg-background">
+      {/* Numbers — minimal strip */}
+      <section className="py-16 border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Clock, number: "60 min", label: "Processo por batelada" },
-              { icon: Microscope, number: "<25μm", label: "Granulometria final" },
-              { icon: DollarSign, number: "1/3", label: "Do preço importado" },
-              { icon: Award, number: "40 anos", label: "De experiência técnica" },
+              { value: "60 min", label: "por batelada" },
+              { value: "<25μm", label: "granulometria" },
+              { value: "⅓", label: "do preço importado" },
+              { value: "40+", label: "anos de expertise" },
             ].map((item, i) => (
-              <FadeIn key={i} delay={i * 100}>
-                <div className="text-center p-6 rounded-xl border bg-card shadow-card">
-                  <item.icon className="h-10 w-10 text-primary mx-auto mb-3" />
-                  <p className="text-3xl md:text-4xl font-black text-foreground">{item.number}</p>
+              <FadeIn key={i} delay={i * 80}>
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">{item.value}</p>
                   <p className="text-sm text-muted-foreground mt-1">{item.label}</p>
                 </div>
               </FadeIn>
@@ -88,101 +94,109 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Problem/Solution */}
-      <section className="py-24 bg-secondary">
+      {/* Problem → Solution */}
+      <section className="py-28">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
             <FadeIn>
-              <div className="p-8 bg-background rounded-xl shadow-card">
-                <h2 className="text-2xl font-black uppercase tracking-wide text-foreground mb-6">
-                  Hoje você <span className="text-destructive">compra</span> chocolate pronto?
-                </h2>
-                <ul className="space-y-4 text-muted-foreground">
-                  {["Custo alto por kg", "Dependência de fornecedores", "Qualidade variável entre lotes"].map((t, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <X className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="label-uppercase text-destructive mb-4">O problema</p>
+              <h2 className="text-2xl font-bold tracking-tight text-foreground mb-6">
+                Comprar chocolate pronto custa caro e limita sua produção.
+              </h2>
+              <ul className="space-y-4 text-muted-foreground">
+                {["Custo alto por kg", "Dependência de fornecedores", "Qualidade variável entre lotes"].map((t, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-destructive shrink-0 mt-2" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
             </FadeIn>
-            <FadeIn delay={200}>
-              <div className="p-8 bg-background rounded-xl shadow-card border-2 border-primary">
-                <h2 className="text-2xl font-black uppercase tracking-wide text-foreground mb-6">
-                  Com a <span className="text-primary">Newtech</span> você produz
-                </h2>
-                <ul className="space-y-4 text-muted-foreground">
-                  {["Controle total da receita e qualidade", "Economia de até 40% no custo", "Qualidade superior e consistente"].map((t, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <FadeIn delay={150}>
+              <p className="label-uppercase text-primary mb-4">A solução</p>
+              <h2 className="text-2xl font-bold tracking-tight text-foreground mb-6">
+                Com a Newtech, você produz com autonomia e economia.
+              </h2>
+              <ul className="space-y-4 text-muted-foreground">
+                {["Controle total da receita e qualidade", "Economia de até 40% no custo", "Consistência superior entre lotes"].map((t, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="py-24 bg-background">
+      {/* Products */}
+      <section className="py-28 bg-secondary">
         <div className="container mx-auto px-4">
           <FadeIn>
-            <h2 className="section-title text-center mb-4">
-              <span>Linha</span> de Produtos
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-              Moinhos de esferas verticais de 10 a 500 kg por batelada
-            </p>
+            <div className="flex items-end justify-between mb-16">
+              <div>
+                <p className="label-uppercase mb-3">Equipamentos</p>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                  Linha de <span className="font-display italic">Produtos</span>
+                </h2>
+              </div>
+              <Link to="/produtos" className="hidden md:inline-flex text-sm font-medium text-primary hover:underline underline-offset-4">
+                Ver todos →
+              </Link>
+            </div>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p, i) => (
-              <FadeIn key={p.slug} delay={i * 100}>
-                <div className="bg-card rounded-xl shadow-card border overflow-hidden group hover:shadow-lg transition-shadow">
-                  <div className="h-48 bg-secondary flex items-center justify-center">
-                    <Cog className="h-16 w-16 text-muted-foreground/30" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-foreground">{p.name}</h3>
-                    <div className="text-sm text-muted-foreground mt-2 space-y-1">
-                      <p>Capacidade: {p.capacity}</p>
-                      <p>Produção: {p.dailyProduction}</p>
+              <FadeIn key={p.slug} delay={i * 60}>
+                <Link to={`/produtos/${p.slug}`} className="group block">
+                  <div className="bg-card rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-all hover:shadow-elevated">
+                    <div className="h-40 bg-secondary rounded-xl flex items-center justify-center mb-5">
+                      <Cog className="h-12 w-12 text-muted-foreground/20 group-hover:text-primary/30 transition-colors" />
                     </div>
-                    <Link to={`/produtos/${p.slug}`}>
-                      <Button className="w-full mt-4 bg-primary hover:bg-newtech-gold-dark text-primary-foreground font-semibold rounded-lg">
-                        Ver Detalhes
-                      </Button>
-                    </Link>
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{p.name}</h3>
+                    <div className="text-sm text-muted-foreground mt-2 space-y-0.5">
+                      <p>{p.capacity} · {p.dailyProduction}</p>
+                    </div>
+                    <span className="inline-flex items-center gap-1 text-sm font-medium text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Ver detalhes <ArrowRight className="h-3 w-3" />
+                    </span>
                   </div>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>
+          <Link to="/produtos" className="md:hidden block text-center text-sm font-medium text-primary hover:underline underline-offset-4 mt-8">
+            Ver todos os produtos →
+          </Link>
         </div>
       </section>
 
       {/* Why Newtech */}
-      <section className="py-24 bg-secondary">
+      <section className="py-28">
         <div className="container mx-auto px-4">
           <FadeIn>
-            <h2 className="section-title text-center mb-12">
-              Por que <span>Newtech</span>?
-            </h2>
+            <div className="text-center mb-16">
+              <p className="label-uppercase mb-3">Diferenciais</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                Por que <span className="font-display italic">Newtech</span>?
+              </h2>
+            </div>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
-              { icon: Award, title: "Tecnologia de Última Geração", desc: "Alta performance com mínima complexidade. Design aberto sem pressurização, painel de controle objetivo junto à máquina, mecânica operacional elementar de alta eficiência, eliminando manutenção de alto custo e complexa." },
-              { icon: Clock, title: "60 Minutos de Processo", desc: "Dos ingredientes básicos às coberturas, esquimós e trufas com granulometria inferior a 25 microns em uma única batelada." },
-              { icon: Wrench, title: "Suporte Técnico Incluso", desc: "Todas as formulações necessárias, assistência técnica completa e peças de reposição." },
-              { icon: ShieldCheck, title: "Sem Manutenção de Alto Custo", desc: "Mecânica simples e robusta, projetada para operar com o mínimo de intervenção técnica e máxima disponibilidade." },
+              { icon: Award, title: "Tecnologia de ponta", desc: "Design aberto sem pressurização, painel de controle junto à máquina, mecânica de alta eficiência." },
+              { icon: Clock, title: "60 min por batelada", desc: "Dos ingredientes brutos a coberturas, esquimós e trufas com granulometria <25μm." },
+              { icon: Wrench, title: "Suporte completo", desc: "Formulações inclusas, assistência técnica e peças de reposição garantidas." },
+              { icon: ShieldCheck, title: "Baixa manutenção", desc: "Mecânica simples e robusta. Máxima disponibilidade com mínima intervenção." },
             ].map((item, i) => (
-              <FadeIn key={i} delay={i * 100}>
-                <div className="text-center p-6">
-                  <item.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-bold text-foreground text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+              <FadeIn key={i} delay={i * 80}>
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-primary/8 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -191,28 +205,30 @@ const Home = () => {
       </section>
 
       {/* Segments */}
-      <section id="segmentos" className="py-24 bg-background">
+      <section className="py-28 bg-secondary">
         <div className="container mx-auto px-4">
           <FadeIn>
-            <h2 className="section-title text-center mb-12">
-              <span>Segmentos</span> Atendidos
-            </h2>
+            <div className="text-center mb-16">
+              <p className="label-uppercase mb-3">Aplicações</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                Segmentos <span className="font-display italic">Atendidos</span>
+              </h2>
+            </div>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { icon: IceCreamCone, title: "Sorveterias", desc: "Produza coberturas esquimós, trufas, ganaches especiais e pastas de oleaginosas para suas receitas exclusivas." },
-              { icon: CakeSlice, title: "Confeitarias e Panificação", desc: "Coberturas, recheios forneáveis e chocolates em barra para doces e sobremesas premium." },
-              { icon: Truck, title: "Distribuidores", desc: "Produção em escala industrial para revenda." },
+              { image: segSorveterias, title: "Sorveterias", desc: "Coberturas esquimós, trufas e pastas de oleaginosas." },
+              { image: segConfeitarias, title: "Confeitarias", desc: "Recheios, coberturas e chocolates em barra." },
+              { image: segDistribuidores, title: "Distribuidores", desc: "Produção em escala industrial para revenda." },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
-                <div className="bg-card rounded-xl shadow-card border p-6 text-center hover:border-primary transition-colors">
-                  <item.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-bold text-foreground text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{item.desc}</p>
-                  <Link to="/contato" className="text-sm font-semibold text-primary hover:underline">
-                    Ver soluções →
-                  </Link>
-                </div>
+                <Link to="/segmentos" className="group block text-center">
+                  <div className="w-40 h-40 mx-auto mb-5 flex items-center justify-center">
+                    <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </Link>
               </FadeIn>
             ))}
           </div>
@@ -220,33 +236,31 @@ const Home = () => {
       </section>
 
       {/* History */}
-      <section className="py-24 bg-secondary">
+      <section className="py-28">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 className="section-title mb-6">
-                Nossa <span>História</span>
+              <p className="label-uppercase mb-3">Nossa história</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+                40 anos de <span className="font-display italic">engenharia</span> aplicada
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Com mais de 40 anos de desenvolvimento industrial, a Newtech nasceu da experiência em engenharia química aplicada à indústria alimentícia, resultando na patente brasileira de moinhos de esferas verticais.
+                A Newtech nasceu da experiência em engenharia química aplicada à indústria alimentícia, resultando na patente brasileira de moinhos de esferas verticais.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Sediada em Limoeiro, PE, a Newtech atende todo o Brasil e o Mercosul, levando tecnologia de ponta para a indústria alimentícia.
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Sediada em Limoeiro, PE, atendemos todo o Brasil e o Mercosul com tecnologia de ponta.
               </p>
               <Link to="/sobre">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold rounded-lg">
-                  Conheça Nossa História
+                <Button variant="outline" className="rounded-full px-6 text-sm font-medium border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                  Conheça nossa história
                 </Button>
               </Link>
             </FadeIn>
             <FadeIn delay={200}>
-              <div className="h-80 rounded-xl overflow-hidden shadow-card">
+              <div className="rounded-2xl overflow-hidden">
                 <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
+                  autoPlay loop muted playsInline
+                  className="w-full aspect-[4/3] object-cover"
                 >
                   <source src="/videos/j50.mp4" type="video/mp4" />
                 </video>
@@ -257,14 +271,16 @@ const Home = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section className="py-28 bg-foreground text-background">
         <div className="container mx-auto px-4 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-wider mb-4">
-              Pronto para produzir seu próprio chocolate?
+            <p className="label-uppercase text-background/40 mb-4">Próximo passo</p>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 max-w-2xl mx-auto">
+              Pronto para produzir seu próprio{" "}
+              <span className="font-display italic">chocolate</span>?
             </h2>
-            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Fale com um especialista hoje e descubra qual moinho é ideal para o seu negócio.
+            <p className="text-background/50 mb-10 max-w-md mx-auto">
+              Fale com um especialista e descubra o moinho ideal para seu negócio.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
@@ -272,13 +288,13 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold rounded-lg text-base px-8">
+                <Button size="lg" className="rounded-full px-8 bg-background text-foreground hover:bg-background/90 text-sm font-medium">
                   WhatsApp
                 </Button>
               </a>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-bold rounded-lg text-base px-8">
-                  Formulário de Contato
+                <Button size="lg" variant="outline" className="rounded-full px-8 border-background/20 text-background hover:bg-background/10 hover:text-background text-sm font-medium">
+                  Formulário de contato
                 </Button>
               </Link>
             </div>
@@ -288,12 +304,5 @@ const Home = () => {
     </>
   );
 };
-
-// X icon for problem list
-const X = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M18 6L6 18M6 6l12 12" />
-  </svg>
-);
 
 export default Home;
