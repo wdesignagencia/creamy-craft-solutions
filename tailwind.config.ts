@@ -69,11 +69,13 @@ export default {
         'newtech-light': 'hsl(var(--newtech-light))',
       },
       fontFamily: {
-        'barlow': ['Barlow', 'sans-serif'],
+        'sans': ['DM Sans', 'system-ui', 'sans-serif'],
+        'display': ['Playfair Display', 'Georgia', 'serif'],
       },
       boxShadow: {
         'card': 'var(--shadow-card)',
         'nav': 'var(--shadow-nav)',
+        'elevated': 'var(--shadow-elevated)',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -82,7 +84,7 @@ export default {
       },
       keyframes: {
         'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' }
         },
         'accordion-down': {
@@ -95,7 +97,7 @@ export default {
         }
       },
       animation: {
-        'fade-up': 'fade-up 0.6s ease-out forwards',
+        'fade-up': 'fade-up 0.5s ease-out forwards',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
       }
