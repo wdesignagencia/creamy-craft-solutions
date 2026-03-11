@@ -47,7 +47,7 @@ const Home = () => {
             <p className="label-uppercase text-background/50 mb-4">Moinhos de Esferas Verticais</p>
             <h1 className="text-5xl md:text-7xl font-bold text-white max-w-3xl leading-[1.05] tracking-tight">
               Produza seu próprio{" "}
-              <span className="font-display italic text-primary-foreground">chocolate</span>
+              <span className="font-display italic">chocolate</span>
             </h1>
           </FadeIn>
           <FadeIn delay={200}>
