@@ -81,7 +81,7 @@ const About = () => (
       <div className="container mx-auto px-4 text-center">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Quer conhecer nossas <span className="font-display italic">soluções</span>?
+            Quer conhecer nossas <span className="font-display italic text-background/80">soluções</span>?
           </h2>
           <p className="text-background/50 mb-10 max-w-md mx-auto">
             Fale com um especialista e descubra qual moinho é ideal para o seu negócio.
