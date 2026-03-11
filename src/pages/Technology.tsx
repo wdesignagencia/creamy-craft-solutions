@@ -36,7 +36,7 @@ const Technology = () => (
         <FadeIn>
           <p className="label-uppercase text-white/40 mb-4">Como funciona</p>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight max-w-2xl">
-            Tecnologia <span className="font-display italic">Patenteada</span>
+            Tecnologia <span className="font-display italic text-white/80">Patenteada</span>
           </h1>
           <p className="text-lg text-white/50 max-w-lg mt-6">
             Entenda como nossos moinhos verticais revolucionam a produção de chocolate.

@@ -12,10 +12,15 @@ const navLinks = [
   { label: "Downloads", href: "/downloads" },
 ];
 
+// Pages that have dark hero sections (video/image backgrounds)
+const darkHeroPages = ["/", "/produtos", "/tecnologia"];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  const isDarkHero = darkHeroPages.includes(location.pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -23,15 +28,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // When on dark hero and not scrolled: light text. Otherwise: dark text.
+  const isLightMode = isDarkHero && !scrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-nav" : "bg-transparent"
+        scrolled
+          ? "bg-background/90 backdrop-blur-md shadow-nav"
+          : "bg-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src={logoNewtech} alt="Newtech Máquinas Industriais" className="h-9" />
+          <img
+            src={logoNewtech}
+            alt="Newtech Máquinas Industriais"
+            className={`h-9 transition-all duration-300 ${isLightMode ? "brightness-0 invert" : ""}`}
+          />
         </Link>
 
         {/* Desktop */}
@@ -40,8 +54,14 @@ const Navbar = () => {
             <Link
               key={l.href}
               to={l.href}
-              className={`text-[13px] font-medium tracking-wide transition-colors hover:text-primary ${
-                location.pathname === l.href ? "text-primary" : "text-foreground/70"
+              className={`text-[13px] font-medium tracking-wide transition-colors ${
+                isLightMode
+                  ? location.pathname === l.href
+                    ? "text-white"
+                    : "text-white/70 hover:text-white"
+                  : location.pathname === l.href
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-primary"
               }`}
             >
               {l.label}
@@ -51,12 +71,18 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <Link to="/contato">
-            <Button className="hidden sm:inline-flex rounded-full px-6 text-[13px] font-medium">
+            <Button
+              className={`hidden sm:inline-flex rounded-full px-6 text-[13px] font-medium transition-all duration-300 ${
+                isLightMode
+                  ? "bg-white text-foreground hover:bg-white/90"
+                  : ""
+              }`}
+            >
               Solicitar Orçamento
             </Button>
           </Link>
           <button
-            className="lg:hidden p-2"
+            className={`lg:hidden p-2 transition-colors ${isLightMode ? "text-white" : "text-foreground"}`}
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >

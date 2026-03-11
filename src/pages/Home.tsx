@@ -46,8 +46,8 @@ const Home = () => {
           <FadeIn>
             <p className="label-uppercase text-background/50 mb-4">Moinhos de Esferas Verticais</p>
             <h1 className="text-5xl md:text-7xl font-bold text-white max-w-3xl leading-[1.05] tracking-tight">
-              Produza seu próprio{" "}
-              <span className="font-display italic text-primary-foreground">chocolate</span>
+               Produza seu próprio{" "}
+              <span className="font-display italic text-white/80">chocolate</span>
             </h1>
           </FadeIn>
           <FadeIn delay={200}>
@@ -223,7 +223,7 @@ const Home = () => {
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <Link to="/segmentos" className="group block text-center">
-                  <div className="w-40 h-40 mx-auto mb-5 flex items-center justify-center">
+                  <div className={`mx-auto mb-5 flex items-center justify-center ${item.title === "Distribuidores" ? "w-52 h-52" : "w-40 h-40"}`}>
                     <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{item.title}</h3>
@@ -277,7 +277,7 @@ const Home = () => {
             <p className="label-uppercase text-background/40 mb-4">Próximo passo</p>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 max-w-2xl mx-auto">
               Pronto para produzir seu próprio{" "}
-              <span className="font-display italic">chocolate</span>?
+              <span className="font-display italic text-background/80">chocolate</span>?
             </h2>
             <p className="text-background/50 mb-10 max-w-md mx-auto">
               Fale com um especialista e descubra o moinho ideal para seu negócio.
