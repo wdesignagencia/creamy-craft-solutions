@@ -277,7 +277,7 @@ const Home = () => {
             <p className="label-uppercase text-background/40 mb-4">Próximo passo</p>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 max-w-2xl mx-auto">
               Pronto para produzir seu próprio{" "}
-              <span className="font-display italic">chocolate</span>?
+              <span className="font-display italic text-background/80">chocolate</span>?
             </h2>
             <p className="text-background/50 mb-10 max-w-md mx-auto">
               Fale com um especialista e descubra o moinho ideal para seu negócio.
