@@ -81,6 +81,7 @@ html {
 /* Display font for editorial headings */
 .font-display {
   font-family: 'Playfair Display', Georgia, serif;
+  color: hsl(var(--display-accent));
 }
 
 /* Section title pattern — refined */

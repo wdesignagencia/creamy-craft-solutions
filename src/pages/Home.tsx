@@ -223,7 +223,7 @@ const Home = () => {
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <Link to="/segmentos" className="group block text-center">
-                  <div className="w-40 h-40 mx-auto mb-5 flex items-center justify-center">
+                  <div className={`mx-auto mb-5 flex items-center justify-center ${item.title === "Distribuidores" ? "w-52 h-52" : "w-40 h-40"}`}>
                     <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{item.title}</h3>
