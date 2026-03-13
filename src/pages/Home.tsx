@@ -11,8 +11,9 @@ import segConfeitarias from "@/assets/segment-confeitarias.png";
 import segDistribuidores from "@/assets/segment-distribuidores.png";
 
 // Progressive sizing: bigger model number = taller image
+// J10 increased 30% (was h-36, now h-44 ~ equivalent)
 const productImageHeight: Record<string, string> = {
-  j10: "h-36",
+  j10: "h-44",
   j60: "h-40",
   j120: "h-44",
   j240: "h-48",
@@ -68,13 +69,13 @@ const Home = () => {
           <FadeIn delay={400}>
             <div className="flex flex-wrap gap-4 mt-10">
               <Link to="/produtos">
-                <Button size="lg" className="rounded-full px-8 text-sm font-medium bg-white text-foreground hover:bg-white/90">
+                <Button size="lg" className="rounded-full px-8 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary border border-primary">
                   Conheça os moinhos
                   <ArrowRight className="h-4 w-4 ml-1" />
                 </Button>
               </Link>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="rounded-full px-8 text-sm font-medium border-white/20 text-white hover:bg-white/10 hover:text-white">
+                <Button size="lg" variant="outline" className="rounded-full px-8 text-sm font-medium border-white/20 text-white hover:bg-white hover:text-foreground hover:border-white">
                   Fale conosco
                 </Button>
               </Link>
@@ -160,16 +161,16 @@ const Home = () => {
             {products.map((p, i) => (
               <FadeIn key={p.slug} delay={i * 60}>
                 <Link to={`/produtos/${p.slug}`} className="group block relative">
-                  <div className="bg-card rounded-2xl pt-4 pb-6 px-6 border border-border/50 hover:border-primary/30 transition-all hover:shadow-elevated overflow-visible relative">
+                  <div className="bg-card rounded-2xl pt-4 pb-6 px-6 border border-border/50 hover:border-primary/30 transition-all hover:shadow-elevated overflow-visible relative h-[420px] flex flex-col">
                     {/* Floating product image */}
-                    <div className="flex items-end justify-center -mt-16 mb-4">
+                    <div className="flex items-end justify-center -mt-16 mb-4 flex-1 min-h-0">
                       <img
                         src={p.image}
                         alt={p.name}
                         className={`${productImageHeight[p.slug] || "h-44"} w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500`}
                       />
                     </div>
-                    <div className="text-center">
+                    <div className="text-center mt-auto">
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{p.name}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{p.capacity} · {p.dailyProduction}</p>
                       <span className="inline-flex items-center gap-1 text-sm font-medium text-primary mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -303,12 +304,12 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="lg" className="rounded-full px-8 bg-background text-foreground hover:bg-background/90 text-sm font-medium">
+                <Button size="lg" className="rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary border border-primary text-sm font-medium">
                   WhatsApp
                 </Button>
               </a>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="rounded-full px-8 border-background/20 text-background hover:bg-background/10 hover:text-background text-sm font-medium">
+                <Button size="lg" variant="outline" className="rounded-full px-8 border-background/20 text-background hover:bg-background hover:text-foreground text-sm font-medium">
                   Formulário de contato
                 </Button>
               </Link>
