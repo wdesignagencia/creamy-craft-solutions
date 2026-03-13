@@ -93,7 +93,7 @@ const Segmentos = () => {
                     src={seg.image}
                     alt={seg.title}
                     className={`w-full h-auto object-contain drop-shadow-xl ${
-                      seg.title === "Distribuidores" ? "max-w-[420px]" : "max-w-[340px]"
+                      seg.title === "Distribuidores" ? "max-w-[380px]" : "max-w-[300px]"
                     }`}
                   />
                 </div>
