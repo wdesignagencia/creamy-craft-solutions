@@ -161,16 +161,16 @@ const Home = () => {
             {products.map((p, i) => (
               <FadeIn key={p.slug} delay={i * 60}>
                 <Link to={`/produtos/${p.slug}`} className="group block relative">
-                  <div className="bg-card rounded-2xl pt-4 pb-6 px-6 border border-border/50 hover:border-primary/30 transition-all hover:shadow-elevated overflow-visible relative">
+                  <div className="bg-card rounded-2xl pt-4 pb-6 px-6 border border-border/50 hover:border-primary/30 transition-all hover:shadow-elevated overflow-visible relative h-[420px] flex flex-col">
                     {/* Floating product image */}
-                    <div className="flex items-end justify-center -mt-16 mb-4">
+                    <div className="flex items-end justify-center -mt-16 mb-4 flex-1 min-h-0">
                       <img
                         src={p.image}
                         alt={p.name}
                         className={`${productImageHeight[p.slug] || "h-44"} w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500`}
                       />
                     </div>
-                    <div className="text-center">
+                    <div className="text-center mt-auto">
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{p.name}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{p.capacity} · {p.dailyProduction}</p>
                       <span className="inline-flex items-center gap-1 text-sm font-medium text-primary mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
