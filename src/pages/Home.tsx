@@ -69,13 +69,13 @@ const Home = () => {
           <FadeIn delay={400}>
             <div className="flex flex-wrap gap-4 mt-10">
               <Link to="/produtos">
-                <Button size="lg" className="rounded-full px-8 text-sm font-medium bg-white text-foreground hover:bg-white/90">
+                <Button size="lg" className="rounded-full px-8 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary border border-primary">
                   Conheça os moinhos
                   <ArrowRight className="h-4 w-4 ml-1" />
                 </Button>
               </Link>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="rounded-full px-8 text-sm font-medium border-white/20 text-white hover:bg-white/10 hover:text-white">
+                <Button size="lg" variant="outline" className="rounded-full px-8 text-sm font-medium border-white/20 text-white hover:bg-white hover:text-foreground hover:border-white">
                   Fale conosco
                 </Button>
               </Link>
