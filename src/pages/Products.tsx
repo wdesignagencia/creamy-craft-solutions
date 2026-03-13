@@ -9,8 +9,9 @@ import { Helmet } from "react-helmet-async";
 const filters = ["Todos", "Sorveterias", "Confeitarias", "Panificadoras", "Distribuidores"];
 
 // Progressive sizing: bigger model = taller image
+// J10 increased 30% (was h-36, now h-44 ~ equivalent)
 const productImageHeight: Record<string, string> = {
-  j10: "h-36",
+  j10: "h-44",
   j60: "h-40",
   j120: "h-44",
   j240: "h-48",
