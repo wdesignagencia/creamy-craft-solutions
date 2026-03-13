@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { getProduct, products } from "@/data/products";
 import { Button } from "@/components/ui/button";
-import { Cog, ArrowLeft, Download, ArrowRight } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { Helmet } from "react-helmet-async";
 
@@ -49,8 +49,12 @@ const ProductDetail = () => {
 
           <div className="grid md:grid-cols-2 gap-16">
             <FadeIn>
-              <div className="aspect-square bg-secondary rounded-2xl flex items-center justify-center">
-                <Cog className="h-20 w-20 text-muted-foreground/15" />
+              <div className="aspect-square bg-secondary rounded-2xl flex items-center justify-center p-8">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="max-w-full max-h-full object-contain drop-shadow-xl"
+                />
               </div>
             </FadeIn>
 
@@ -92,7 +96,7 @@ const ProductDetail = () => {
                       ["Esferas", "Cromo duro 3,9mm"],
                       ["Tempo/Batelada", "60 minutos"],
                       ["Granulometria", "< 25 microns"],
-                    ].map(([label, value], i) => (
+                    ].map(([label, value]) => (
                       <div key={label} className="flex justify-between py-3 border-b border-border/50 text-sm">
                         <span className="text-muted-foreground">{label}</span>
                         <span className="font-medium text-foreground">{value}</span>

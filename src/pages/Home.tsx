@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Microscope, DollarSign, Award, ShieldCheck, Cog, Wrench, ArrowRight } from "lucide-react";
+import { Clock, Award, ShieldCheck, Wrench, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { products } from "@/data/products";
 import { Helmet } from "react-helmet-async";
@@ -9,6 +9,16 @@ import Balatro from "@/components/Balatro";
 import segSorveterias from "@/assets/segment-sorveterias.png";
 import segConfeitarias from "@/assets/segment-confeitarias.png";
 import segDistribuidores from "@/assets/segment-distribuidores.png";
+
+// Progressive sizing: bigger model number = taller image
+const productImageHeight: Record<string, string> = {
+  j10: "h-36",
+  j60: "h-40",
+  j120: "h-44",
+  j240: "h-48",
+  j500: "h-56",
+  t1000d: "h-48",
+};
 
 const Home = () => {
   return (
@@ -58,7 +68,7 @@ const Home = () => {
           <FadeIn delay={400}>
             <div className="flex flex-wrap gap-4 mt-10">
               <Link to="/produtos">
-                <Button size="lg" className="rounded-full px-8 text-sm font-medium">
+                <Button size="lg" className="rounded-full px-8 text-sm font-medium bg-white text-foreground hover:bg-white/90">
                   Conheça os moinhos
                   <ArrowRight className="h-4 w-4 ml-1" />
                 </Button>
@@ -130,11 +140,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Products */}
+      {/* Products — floating PNG cards */}
       <section className="py-28 bg-secondary">
         <div className="container mx-auto px-4">
           <FadeIn>
-            <div className="flex items-end justify-between mb-16">
+            <div className="flex items-end justify-between mb-20">
               <div>
                 <p className="label-uppercase mb-3">Equipamentos</p>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -146,21 +156,26 @@ const Home = () => {
               </Link>
             </div>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-20">
             {products.map((p, i) => (
               <FadeIn key={p.slug} delay={i * 60}>
-                <Link to={`/produtos/${p.slug}`} className="group block">
-                  <div className="bg-card rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-all hover:shadow-elevated">
-                    <div className="h-40 bg-secondary rounded-xl flex items-center justify-center mb-5">
-                      <Cog className="h-12 w-12 text-muted-foreground/20 group-hover:text-primary/30 transition-colors" />
+                <Link to={`/produtos/${p.slug}`} className="group block relative">
+                  <div className="bg-card rounded-2xl pt-4 pb-6 px-6 border border-border/50 hover:border-primary/30 transition-all hover:shadow-elevated overflow-visible relative">
+                    {/* Floating product image */}
+                    <div className="flex items-end justify-center -mt-16 mb-4">
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className={`${productImageHeight[p.slug] || "h-44"} w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500`}
+                      />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{p.name}</h3>
-                    <div className="text-sm text-muted-foreground mt-2 space-y-0.5">
-                      <p>{p.capacity} · {p.dailyProduction}</p>
+                    <div className="text-center">
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{p.name}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{p.capacity} · {p.dailyProduction}</p>
+                      <span className="inline-flex items-center gap-1 text-sm font-medium text-primary mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Ver detalhes <ArrowRight className="h-3 w-3" />
+                      </span>
                     </div>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Ver detalhes <ArrowRight className="h-3 w-3" />
-                    </span>
                   </div>
                 </Link>
               </FadeIn>
@@ -217,14 +232,14 @@ const Home = () => {
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { image: segSorveterias, title: "Sorveterias", desc: "Coberturas esquimós, trufas e pastas de oleaginosas." },
-              { image: segConfeitarias, title: "Confeitarias", desc: "Recheios, coberturas e chocolates em barra." },
-              { image: segDistribuidores, title: "Distribuidores", desc: "Produção em escala industrial para revenda." },
+              { image: segSorveterias, title: "Sorveterias", desc: "Coberturas esquimós, trufas e pastas de oleaginosas.", size: "h-44" },
+              { image: segConfeitarias, title: "Confeitarias", desc: "Recheios, coberturas e chocolates em barra.", size: "h-44" },
+              { image: segDistribuidores, title: "Distribuidores", desc: "Produção em escala industrial para revenda.", size: "h-40" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <Link to="/segmentos" className="group block text-center">
-                  <div className={`mx-auto mb-5 flex items-center justify-center ${item.title === "Distribuidores" ? "w-52 h-52" : "w-40 h-40"}`}>
-                    <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" />
+                  <div className="mx-auto mb-5 flex items-center justify-center h-52">
+                    <img src={item.image} alt={item.title} className={`${item.size} w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300`} />
                   </div>
                   <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>

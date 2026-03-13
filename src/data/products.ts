@@ -1,3 +1,10 @@
+import productJ10 from "@/assets/product-j10.webp";
+import productJ60 from "@/assets/product-j60.webp";
+import productJ120 from "@/assets/product-j120.webp";
+import productJ240 from "@/assets/product-j240.webp";
+import productJ500 from "@/assets/product-j500.webp";
+import productT1000 from "@/assets/product-t1000.webp";
+
 export interface ProductData {
   slug: string;
   name: string;
@@ -13,6 +20,7 @@ export interface ProductData {
   description: string;
   features: string[];
   pdfUrl?: string;
+  image: string;
 }
 
 export const products: ProductData[] = [
@@ -31,6 +39,7 @@ export const products: ProductData[] = [
     description: 'Moinho compacto ideal para confeitarias e pequenas produções artesanais de chocolate.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
     pdfUrl: '/fichas/j10.pdf',
+    image: productJ10,
   },
   {
     slug: 'j60',
@@ -47,6 +56,7 @@ export const products: ProductData[] = [
     description: 'Moinho versátil para produções médias. Ideal para sorveterias e confeitarias com demanda constante.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
     pdfUrl: '/fichas/j60.pdf',
+    image: productJ60,
   },
   {
     slug: 'j120',
@@ -63,6 +73,7 @@ export const products: ProductData[] = [
     description: 'Moinho de alta capacidade para produções industriais de médio porte.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
     pdfUrl: '/fichas/j120.pdf',
+    image: productJ120,
   },
   {
     slug: 'j240',
@@ -79,6 +90,7 @@ export const products: ProductData[] = [
     description: 'Moinho industrial para grandes volumes de produção diária.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
     pdfUrl: '/fichas/j240.pdf',
+    image: productJ240,
   },
   {
     slug: 'j500',
@@ -95,6 +107,7 @@ export const products: ProductData[] = [
     description: 'Nosso maior moinho, projetado para operações industriais de grande escala.',
     features: ['Inox 304', 'Esferas cromo duro 3,9mm', '60 min/batelada', 'Granulometria <25 microns'],
     pdfUrl: '/fichas/j500.pdf',
+    image: productJ500,
   },
   {
     slug: 't1000d',
@@ -111,6 +124,7 @@ export const products: ProductData[] = [
     description: 'Tanque duplo de armazenamento para produto refinado, mantendo temperatura e qualidade.',
     features: ['Inox 304', 'Duplo tanque 500 kg', 'Controle de temperatura', 'Agitação contínua'],
     pdfUrl: '/fichas/t1000d.pdf',
+    image: productT1000,
   },
 ];
 
