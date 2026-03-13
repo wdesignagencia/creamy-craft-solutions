@@ -74,24 +74,24 @@ const Products = () => {
           </div>
 
           {/* Grid — floating PNG cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-20 items-end">
             {filtered.map((p, i) => (
               <FadeIn key={p.slug} delay={i * 60}>
-                <div className="group bg-card rounded-2xl border border-border/50 overflow-visible hover:border-primary/30 transition-all hover:shadow-elevated relative h-[420px] flex flex-col">
+                <div className="group bg-card rounded-2xl border border-border/50 overflow-visible hover:border-primary/30 transition-all hover:shadow-elevated relative">
                   {/* Floating product image */}
-                  <div className="flex items-end justify-center -mt-12 mb-2 px-4 flex-1 min-h-0">
+                  <div className="flex items-end justify-center -mt-12 mb-2 px-4">
                     <img
                       src={p.image}
                       alt={p.name}
                       className={`${productImageHeight[p.slug] || "h-44"} w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500`}
                     />
                   </div>
-                  <div className="p-6 pt-2 text-center mt-auto">
+                  <div className="p-6 pt-2 text-center">
                     <h2 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{p.name}</h2>
                     <p className="text-sm text-muted-foreground mt-1">{p.capacity} · {p.dailyProduction}</p>
                     <div className="flex gap-2 mt-5 justify-center">
                       <Link to={`/produtos/${p.slug}`} className="flex-1 max-w-[200px]">
-                        <Button className="w-full rounded-full text-sm font-medium bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary border border-primary">
+                        <Button className="w-full rounded-full text-sm font-medium">
                           Ver detalhes
                           <ArrowRight className="h-3.5 w-3.5 ml-1" />
                         </Button>
