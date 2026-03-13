@@ -11,8 +11,9 @@ import segConfeitarias from "@/assets/segment-confeitarias.png";
 import segDistribuidores from "@/assets/segment-distribuidores.png";
 
 // Progressive sizing: bigger model number = taller image
+// J10 increased 30% (was h-36, now h-44 ~ equivalent)
 const productImageHeight: Record<string, string> = {
-  j10: "h-36",
+  j10: "h-44",
   j60: "h-40",
   j120: "h-44",
   j240: "h-48",
