@@ -91,7 +91,7 @@ const About = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button size="lg" className="rounded-full px-8 bg-background text-foreground hover:bg-background/90 text-sm font-medium">
+            <Button size="lg" className="rounded-full px-8 bg-background text-foreground hover:bg-primary hover:text-primary-foreground border border-background text-sm font-medium">
               Fale pelo WhatsApp
             </Button>
           </a>

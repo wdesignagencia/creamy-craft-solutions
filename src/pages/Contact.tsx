@@ -128,7 +128,7 @@ const Contact = () => {
                     <label className="text-sm font-medium text-foreground">Mensagem</label>
                     <textarea className={`${inputClass} h-28 resize-none`} value={form.message} onChange={e => update("message", e.target.value)} />
                   </div>
-                  <Button type="submit" size="lg" className="w-full rounded-xl text-sm font-medium">
+                  <Button type="submit" size="lg" className="w-full rounded-xl text-sm font-medium bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary border border-primary">
                     Enviar via WhatsApp
                   </Button>
                 </form>

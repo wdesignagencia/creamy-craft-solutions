@@ -145,7 +145,7 @@ const Segmentos = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="rounded-full px-8 text-sm font-medium">
+              <Button className="rounded-full px-8 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary border border-primary">
                 Fale pelo WhatsApp
               </Button>
             </a>
