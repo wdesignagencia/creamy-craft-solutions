@@ -304,12 +304,12 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="lg" className="rounded-full px-8 bg-background text-foreground hover:bg-background/90 text-sm font-medium">
+                <Button size="lg" className="rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary border border-primary text-sm font-medium">
                   WhatsApp
                 </Button>
               </a>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="rounded-full px-8 border-background/20 text-background hover:bg-background/10 hover:text-background text-sm font-medium">
+                <Button size="lg" variant="outline" className="rounded-full px-8 border-background/20 text-background hover:bg-background hover:text-foreground text-sm font-medium">
                   Formulário de contato
                 </Button>
               </Link>
