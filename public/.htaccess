@@ -12,9 +12,9 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
 
-  # HTTPS redirect - descomente apenas se SSL estiver configurado
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Forçar HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # ------------------------------
   # SPA Routing - Redireciona tudo para index.html
