@@ -37,7 +37,20 @@ const Contact = () => {
       return;
     }
     setErrors({});
-    const text = encodeURIComponent(`Olá! Sou ${form.name}${form.company ? ` da ${form.company}` : ''}. Segmento: ${form.segment}. ${form.message || ''}`);
+    const lines = [
+      `*Solicitação de Orçamento — Newtech*`,
+      ``,
+      `👤 *Nome:* ${form.name}`,
+      form.company ? `🏢 *Empresa:* ${form.company}` : '',
+      `📦 *Segmento:* ${form.segment}`,
+      form.capacity ? `⚙️ *Capacidade desejada:* ${form.capacity}` : '',
+      form.region ? `📍 *Região:* ${form.region}` : '',
+      form.timeline ? `📅 *Prazo:* ${form.timeline}` : '',
+      form.budget ? `💰 *Orçamento:* ${form.budget}` : '',
+      ``,
+      form.message ? `💬 *Mensagem:*\n${form.message}` : '',
+    ].filter(Boolean).join('\n');
+    const text = encodeURIComponent(lines);
     window.open(`https://wa.me/5581994185453?text=${text}`, '_blank');
     toast({ title: "Mensagem preparada!", description: "Você será redirecionado para o WhatsApp." });
   };

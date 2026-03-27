@@ -6,19 +6,20 @@ Options -Indexes
 DirectoryIndex index.html
 
 # ------------------------------
-# Forçar HTTPS (comente se SSL não estiver ativo)
+# Bloco 1: Forçar HTTPS
+# ------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ------------------------------
+# Bloco 2: SPA Routing
 # ------------------------------
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-
-  # Forçar HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-  # ------------------------------
-  # SPA Routing - Redireciona tudo para index.html
-  # ------------------------------
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ index.html [QSA,L]
